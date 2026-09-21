@@ -1,0 +1,336 @@
+table _Measures
+	lineageTag: 99901029-613b-4f1f-bbd2-3d78b559cc9b
+
+	measure 'Sales Revenue' =
+			CALCULATE(
+				SUM('analytics FactTransaction'[LineAmount]),
+				KEEPFILTERS('analytics FactTransaction'[IsSalesEligible] = TRUE())
+			)
+		formatString: #,##0.00
+		displayFolder: 01 Core Sales
+		lineageTag: fcd8afb9-a58f-4327-bd78-8e56ae618d22
+
+	measure 'Average Order Value' = DIVIDE([Sales Revenue], [Orders])
+		formatString: #,##0.00
+		displayFolder: 01 Core Sales
+		lineageTag: 8d03f9f4-6a7e-4466-b3be-4da2bae5da0f
+
+	measure 'Units Sold' =
+			CALCULATE(
+				SUM('analytics FactTransaction'[Quantity]),
+				KEEPFILTERS('analytics FactTransaction'[IsSalesEligible] = TRUE())
+			)
+		formatString: #,##0
+		displayFolder: 02 Orders & Units
+		lineageTag: 20e9f15c-7d21-42d9-987e-ec9e79846579
+
+	measure Orders =
+			CALCULATE(
+				DISTINCTCOUNT('analytics FactTransaction'[Invoice]),
+				KEEPFILTERS('analytics FactTransaction'[IsSalesEligible] = TRUE())
+			)
+		formatString: #,##0
+		displayFolder: 02 Orders & Units
+		lineageTag: 09319be3-6930-463e-b6e9-cf16ec52f3ca
+
+	measure 'Average Units per Order' = DIVIDE([Units Sold], [Orders])
+		formatString: #,##0.00
+		displayFolder: 02 Orders & Units
+		lineageTag: bec2cb15-0eb1-495b-aa1a-e3e10ba5f207
+
+	measure 'Sales Customers' =
+			CALCULATE(
+				DISTINCTCOUNT('analytics FactTransaction'[CustomerKey]),
+				KEEPFILTERS('analytics FactTransaction'[IsCustomerAnalyticsEligible] = TRUE())
+			)
+		formatString: #,##0
+		displayFolder: 03 Customers
+		lineageTag: f4443b37-ee52-4b56-a2fa-0f0f5d1ea2f4
+
+	measure 'Known Customer Revenue' =
+			CALCULATE(
+				SUM('analytics FactTransaction'[LineAmount]),
+				KEEPFILTERS('analytics FactTransaction'[IsCustomerAnalyticsEligible] = TRUE())
+			)
+		formatString: #,##0.00
+		displayFolder: 03 Customers
+		lineageTag: 28c6b204-3c0e-4601-8554-320c01979464
+
+	measure 'Revenue per Known Customer' = DIVIDE([Known Customer Revenue], [Sales Customers])
+		formatString: #,##0.00
+		displayFolder: 03 Customers
+		lineageTag: 87b4be08-24d7-4e4a-9166-341e4c29d370
+
+	measure 'Orders per Known Customer' =
+			DIVIDE(
+				CALCULATE(
+					DISTINCTCOUNT('analytics FactTransaction'[Invoice]),
+					KEEPFILTERS('analytics FactTransaction'[IsCustomerAnalyticsEligible] = TRUE())
+				),
+				[Sales Customers]
+			)
+		formatString: #,##0.00
+		displayFolder: 03 Customers
+		lineageTag: 96044e7c-3bfd-4248-9d2e-ff0c336e28bc
+
+	measure 'Repeat Customers' =
+			CALCULATE(
+				COUNTROWS('analytics CustomerRepeatBehavior'),
+				KEEPFILTERS('analytics CustomerRepeatBehavior'[HasRepeatPurchase] = TRUE())
+			)
+		formatString: #,##0
+		displayFolder: 03 Customers
+		lineageTag: 9894c565-b73b-4411-b616-656ff650e5a0
+
+	measure 'One-Time Customers' =
+			CALCULATE(
+				COUNTROWS('analytics CustomerRepeatBehavior'),
+				KEEPFILTERS('analytics CustomerRepeatBehavior'[HasRepeatPurchase] = FALSE())
+			)
+		formatString: #,##0
+		displayFolder: 03 Customers
+		lineageTag: c3400e2a-b181-45fa-bab2-84694cfc4a79
+
+	measure 'Repeat Customer Rate' = DIVIDE([Repeat Customers], [Repeat Customers] + [One-Time Customers])
+		formatString: 0.00%
+		displayFolder: 03 Customers
+		lineageTag: d8f09f8a-35ae-430d-89e6-ae45a8e5855a
+
+	measure 'Cancellation Value' =
+			CALCULATE(
+				SUMX('analytics FactTransaction', ABS('analytics FactTransaction'[LineAmount])),
+				KEEPFILTERS('analytics FactTransaction'[IsCancellationEligible] = TRUE())
+			)
+		formatString: #,##0.00
+		displayFolder: 04 Cancellation
+		lineageTag: fd39cb57-128f-4b35-88c3-3ddfbd2cff14
+
+	measure 'Cancellation Units' =
+			CALCULATE(
+				SUMX('analytics FactTransaction', ABS('analytics FactTransaction'[Quantity])),
+				KEEPFILTERS('analytics FactTransaction'[IsCancellationEligible] = TRUE())
+			)
+		formatString: #,##0
+		displayFolder: 04 Cancellation
+		lineageTag: 9be97d6a-bf71-48a2-8b5c-5b5fd60584ea
+
+	measure 'Cancellation Invoices' =
+			CALCULATE(
+				DISTINCTCOUNT('analytics FactTransaction'[Invoice]),
+				KEEPFILTERS('analytics FactTransaction'[IsCancellationEligible] = TRUE())
+			)
+		formatString: #,##0
+		displayFolder: 04 Cancellation
+		lineageTag: b097d060-e1c3-4665-8384-33f63525ce64
+
+	measure 'Customers with Cancellations' =
+			CALCULATE(
+				DISTINCTCOUNT('analytics FactTransaction'[CustomerKey]),
+				KEEPFILTERS('analytics FactTransaction'[IsCancellationEligible] = TRUE()),
+				KEEPFILTERS('analytics FactTransaction'[IsKnownCustomer] = TRUE())
+			)
+		formatString: #,##0
+		displayFolder: 04 Cancellation
+		lineageTag: 4b50dc13-7718-4b48-a0bf-bcdd0b232c2e
+
+	measure 'Cancellation Value Rate' = DIVIDE([Cancellation Value], [Sales Revenue] + [Cancellation Value])
+		formatString: 0.00%
+		displayFolder: 04 Cancellation
+		lineageTag: e950120e-5817-45fd-8094-d706ad801465
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales Revenue PY' = CALCULATE([Sales Revenue], DATEADD('analytics DimDate'[FullDate], -1, YEAR))
+		formatString: #,##0.00
+		displayFolder: 05 Time Intelligence
+		lineageTag: 030b1361-33b9-44cf-a4d5-938953521762
+
+	measure 'Sales Revenue YoY' = [Sales Revenue] - [Sales Revenue PY]
+		formatString: #,##0.00
+		displayFolder: 05 Time Intelligence
+		lineageTag: 29c8ddb1-90df-4124-9144-115f90b1dce4
+
+	measure 'Sales Revenue YoY %' = DIVIDE([Sales Revenue YoY], [Sales Revenue PY])
+		formatString: 0.00%
+		displayFolder: 05 Time Intelligence
+		lineageTag: ce590429-2380-4d03-82f9-a3b4c9bdeab9
+
+	measure 'Orders PY' = CALCULATE([Orders], DATEADD('analytics DimDate'[FullDate], -1, YEAR))
+		formatString: #,##0
+		displayFolder: 05 Time Intelligence
+		lineageTag: da9be277-6725-4c88-b97d-ca35e2c0d3f4
+
+	measure 'Orders YoY %' = DIVIDE([Orders] - [Orders PY], [Orders PY])
+		formatString: 0.00%
+		displayFolder: 05 Time Intelligence
+		lineageTag: fc434df8-9639-499a-add5-f4443c205150
+
+	measure 'Units Sold PY' = CALCULATE([Units Sold], DATEADD('analytics DimDate'[FullDate], -1, YEAR))
+		formatString: #,##0
+		displayFolder: 05 Time Intelligence
+		lineageTag: cfaf841e-160e-4bda-aec3-ae7f04d68cf1
+
+	measure 'Units Sold YoY %' = DIVIDE([Units Sold] - [Units Sold PY], [Units Sold PY])
+		formatString: 0.00%
+		displayFolder: 05 Time Intelligence
+		lineageTag: 9c3b526b-fc48-4428-ac36-c0110e379661
+
+	measure 'Sales Revenue YTD' = TOTALYTD([Sales Revenue], 'analytics DimDate'[FullDate])
+		formatString: #,##0.00
+		displayFolder: 05 Time Intelligence
+		lineageTag: 40e54007-b946-41e2-8706-b64188d3a256
+
+	measure 'Sales Revenue MTD' = TOTALMTD([Sales Revenue], 'analytics DimDate'[FullDate])
+		formatString: #,##0.00
+		displayFolder: 05 Time Intelligence
+		lineageTag: 7f88cf8f-8d39-4340-9bf1-914071454281
+
+	measure 'Canonical Transaction Rows' = COUNTROWS('analytics FactTransaction')
+		formatString: #,##0
+		displayFolder: 08 Data Quality & Utility
+		lineageTag: 934d44fe-3869-4d87-8d7e-43ae950bfeea
+
+	measure 'Sales Eligible Rows' = CALCULATE(COUNTROWS('analytics FactTransaction'), KEEPFILTERS('analytics FactTransaction'[IsSalesEligible] = TRUE()))
+		formatString: #,##0
+		displayFolder: 08 Data Quality & Utility
+		lineageTag: a7936f9d-3ed9-469a-906d-24e8042d11ff
+
+	measure 'Anonymous Sales Revenue' =
+			CALCULATE(
+				SUM('analytics FactTransaction'[LineAmount]),
+				KEEPFILTERS('analytics FactTransaction'[IsSalesEligible] = TRUE()),
+				KEEPFILTERS('analytics FactTransaction'[IsKnownCustomer] = FALSE())
+			)
+		formatString: #,##0.00
+		displayFolder: 08 Data Quality & Utility
+		lineageTag: 40c0e054-5d1d-41fc-95de-676680cdbe5f
+
+	measure 'Anonymous Sales Revenue %' = DIVIDE([Anonymous Sales Revenue], [Sales Revenue])
+		formatString: 0.00%
+		displayFolder: 08 Data Quality & Utility
+		lineageTag: 9158b104-e5ec-456a-9bbd-1475481587b1
+
+	measure 'Duplicate Flagged Revenue' =
+			CALCULATE(
+				SUM('analytics FactTransaction'[LineAmount]),
+				KEEPFILTERS('analytics FactTransaction'[IsSalesEligible] = TRUE()),
+				KEEPFILTERS('analytics FactTransaction'[IsExactDuplicateAfterFirst] = TRUE())
+			)
+		formatString: #,##0.00
+		displayFolder: 08 Data Quality & Utility
+		lineageTag: 40b88318-b764-40d0-9f9e-288ef2c30bb0
+
+	measure 'Duplicate Revenue Impact %' = DIVIDE([Duplicate Flagged Revenue], [Sales Revenue])
+		formatString: 0.00%
+		displayFolder: 08 Data Quality & Utility
+		lineageTag: 9cd5f99f-bf41-463e-a89e-099cc50dc54a
+
+	measure 'Operational Adjustment Rows' = CALCULATE(COUNTROWS('analytics FactTransaction'), KEEPFILTERS('analytics FactTransaction'[TransactionClass] = "OPERATIONAL_STOCK_ADJUSTMENT"))
+		formatString: #,##0
+		displayFolder: 08 Data Quality & Utility
+		lineageTag: a4495926-6cd7-4a7f-80ab-82159c12c931
+
+	measure 'DQ Review Rows' = COALESCE(CALCULATE(COUNTROWS('analytics FactTransaction'), KEEPFILTERS('analytics FactTransaction'[TransactionClass] = "DQ_REVIEW")), 0)
+		formatString: #,##0
+		displayFolder: 08 Data Quality & Utility
+		lineageTag: 0cd8867b-5662-42a4-b246-b0feb8581085
+
+	measure 'RFM Customers' = CALCULATE(COUNTROWS('analytics CustomerRFM'), REMOVEFILTERS('analytics CustomerRFM'[Segment]))
+		formatString: #,##0
+		displayFolder: 06 RFM
+		lineageTag: e7edf0d6-9a7b-46bb-8976-04df0e4ac454
+
+	measure 'RFM Revenue' = CALCULATE(SUM('analytics CustomerRFM'[Monetary]), REMOVEFILTERS('analytics CustomerRFM'[Segment]))
+		formatString: #,##0.00
+		displayFolder: 06 RFM
+		lineageTag: fcb6eabd-3253-4593-8a38-23d2b19424df
+
+	measure 'Segment Customers' = COUNTROWS('analytics CustomerRFM')
+		formatString: #,##0
+		displayFolder: 06 RFM
+		lineageTag: 572348aa-4946-4efc-93dc-bc460404f4aa
+
+	measure 'Segment Revenue' = SUM('analytics CustomerRFM'[Monetary])
+		formatString: #,##0.00
+		displayFolder: 06 RFM
+		lineageTag: 23073dbf-e0c9-4e9b-adb1-f2c38c2b7bba
+
+	measure 'Segment Customer Share' = DIVIDE([Segment Customers], [RFM Customers])
+		formatString: 0.00%
+		displayFolder: 06 RFM
+		lineageTag: d39ae7da-e3a4-4d9f-b8f8-9d970e67ad9b
+
+	measure 'Segment Revenue Share' = DIVIDE([Segment Revenue], [RFM Revenue])
+		formatString: 0.00%
+		displayFolder: 06 RFM
+		lineageTag: 878ba253-640c-4827-bfef-2d411976c222
+
+	measure 'Average RFM Recency' = AVERAGE('analytics CustomerRFM'[Recency])
+		formatString: #,##0.00
+		displayFolder: 06 RFM
+		lineageTag: 31d05f48-86c3-457a-8560-d19d06559b0d
+
+	measure 'Average RFM Frequency' = AVERAGE('analytics CustomerRFM'[Frequency])
+		formatString: #,##0.00
+		displayFolder: 06 RFM
+		lineageTag: bbed35a9-a6ff-4e14-8fbe-8cec227a8936
+
+	measure 'Average RFM Monetary' = AVERAGE('analytics CustomerRFM'[Monetary])
+		formatString: #,##0.00
+		displayFolder: 06 RFM
+		lineageTag: b961b770-d093-4ffd-83e6-1fa03f5faa73
+
+	measure 'Cohort Size' = SUMX(VALUES('analytics CohortRetention'[AcquisitionCohort]), CALCULATE(MAX('analytics CohortRetention'[CohortSize])))
+		formatString: #,##0
+		displayFolder: 07 Cohort & Retention
+		lineageTag: 76b16bdd-744d-4be8-bfe9-a8a907055626
+
+	measure 'Active Cohort Customers' = SUM('analytics CohortRetention'[ActiveCustomers])
+		formatString: #,##0
+		displayFolder: 07 Cohort & Retention
+		lineageTag: 5e63b48e-4c6d-4ae0-8623-0a8d0da49549
+
+	measure 'Retention Rate' = DIVIDE(SUM('analytics CohortRetention'[ActiveCustomers]), SUM('analytics CohortRetention'[CohortSize]))
+		formatString: 0.00%
+		displayFolder: 07 Cohort & Retention
+		lineageTag: 0b76774a-b106-4311-a5cb-33d34bead00e
+
+	measure 'Cohort Revenue' = SUM('analytics CohortRevenue'[Revenue])
+		formatString: #,##0.00
+		displayFolder: 07 Cohort & Retention
+		lineageTag: f4b9412e-243d-458b-b8a5-88eb3d9a9e65
+
+	measure 'Revenue per Original Cohort Customer' = DIVIDE([Cohort Revenue], SUMX(VALUES('analytics CohortRevenue'[AcquisitionCohort]), CALCULATE(MAX('analytics CohortRevenue'[CohortSize]))))
+		formatString: #,##0.00
+		displayFolder: 07 Cohort & Retention
+		lineageTag: aa5d4e66-774f-48f4-917d-7fc91fff2e9b
+
+	measure 'Cohort Orders' = SUM('analytics CohortRevenue'[Orders])
+		formatString: #,##0
+		displayFolder: 07 Cohort & Retention
+		lineageTag: 9f350f42-1235-48ad-8660-19b8beeb3cce
+
+	measure 'Orders per Original Cohort Customer' = DIVIDE([Cohort Orders], SUMX(VALUES('analytics CohortRevenue'[AcquisitionCohort]), CALCULATE(MAX('analytics CohortRevenue'[CohortSize]))))
+		formatString: #,##0.00
+		displayFolder: 07 Cohort & Retention
+		lineageTag: 1684c3f9-1b9d-48cd-a3d8-ad3b3f00521b
+
+	column Placeholder
+		dataType: string
+		isHidden
+		lineageTag: f0fb13dd-6c37-4c24-ac78-a04241e528cc
+		summarizeBy: none
+		sourceColumn: Placeholder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table [Placeholder = nullable text], {})
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

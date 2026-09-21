@@ -1,0 +1,274 @@
+table 'analytics FactTransaction'
+	lineageTag: 15388d71-dc76-4e52-84fb-35138e9ebb0e
+
+	column TransactionLineKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 408a6fc6-1d0c-4427-ab9a-4e5a577a3180
+		summarizeBy: none
+		sourceColumn: TransactionLineKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2eeeaec0-c0db-4ba4-b02f-67e32562cc44
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5a1395e4-f978-4621-a968-3397d4bbce7f
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5b41abef-8206-464d-b074-b81d19e07e4e
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 232b7242-4a73-4252-a1b6-58cfff5ddea5
+		summarizeBy: none
+		sourceColumn: CountryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceSheet
+		dataType: string
+		isHidden
+		lineageTag: 9a2e7219-f6f3-4040-b77b-b7ac88d72c92
+		summarizeBy: none
+		sourceColumn: SourceSheet
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceRowNumber
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 664ecd0c-3194-4e70-903c-1a16a87fd026
+		summarizeBy: none
+		sourceColumn: SourceRowNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Invoice
+		dataType: string
+		lineageTag: 1123177e-90cf-4298-8fba-0ca137de9510
+		summarizeBy: none
+		sourceColumn: Invoice
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDate
+		dataType: dateTime
+		formatString: yyyy-MM-dd HH:mm
+		lineageTag: 36580109-7258-4ece-8004-f0b71e0ac059
+		summarizeBy: none
+		sourceColumn: InvoiceDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineDescription
+		dataType: string
+		lineageTag: a17ee662-3543-4211-97ef-072b69bf08d0
+		summarizeBy: none
+		sourceColumn: LineDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: #,##0
+		lineageTag: d8f7570b-8d60-4914-8d4e-0200694a11ce
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price
+		dataType: double
+		formatString: #,##0.00####
+		lineageTag: d784755f-4b01-4cf4-8072-2b8e4798cf0d
+		summarizeBy: none
+		sourceColumn: Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LineAmount
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: d683fcc5-fe7b-4fbf-ad84-34ea041cf285
+		summarizeBy: sum
+		sourceColumn: LineAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ItemClass
+		dataType: string
+		lineageTag: 42728966-c2d9-41a1-a9af-b74482cf4a1a
+		summarizeBy: none
+		sourceColumn: ItemClass
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionClass
+		dataType: string
+		lineageTag: 38704d4f-1408-4b9f-ab52-4ea42b3f840a
+		summarizeBy: none
+		sourceColumn: TransactionClass
+
+		annotation SummarizationSetBy = Automatic
+
+	column DQReviewReason
+		dataType: string
+		isHidden
+		lineageTag: 033482f6-64eb-4795-ae7b-bcf6351c9add
+		summarizeBy: none
+		sourceColumn: DQReviewReason
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsKnownCustomer
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 647eb60d-9e7e-4709-aa4d-5d3fc13d79cc
+		summarizeBy: none
+		sourceColumn: IsKnownCustomer
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCancellationInvoice
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7498c382-1a7b-4ca4-8227-067a4a0bcc9d
+		summarizeBy: none
+		sourceColumn: IsCancellationInvoice
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsMerchandise
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 618dd22b-4fab-4c09-b9c4-ae498166df85
+		summarizeBy: none
+		sourceColumn: IsMerchandise
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSalesEligible
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7b303762-ddae-45e9-8e5a-5282d5ca8d93
+		summarizeBy: none
+		sourceColumn: IsSalesEligible
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCustomerAnalyticsEligible
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 22387a50-3114-4a8d-8943-374d106e5b50
+		summarizeBy: none
+		sourceColumn: IsCustomerAnalyticsEligible
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCancellationEligible
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 09886eef-aad9-4d52-a6bd-4cce2d070889
+		summarizeBy: none
+		sourceColumn: IsCancellationEligible
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsZeroPrice
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c84b982f-9496-4435-a2aa-0dcaea04b82f
+		summarizeBy: none
+		sourceColumn: IsZeroPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNegativePrice
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d91bf37e-5a9d-44be-86f8-e215198d15ec
+		summarizeBy: none
+		sourceColumn: IsNegativePrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsExactDuplicateAfterFirst
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: de4ba3cc-0db3-452c-8cd8-17091c66f4af
+		summarizeBy: none
+		sourceColumn: IsExactDuplicateAfterFirst
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsInExactDuplicateGroup
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b488f976-de92-48c0-a22a-291ae2498866
+		summarizeBy: none
+		sourceColumn: IsInExactDuplicateGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExactDuplicateGroupSize
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a8cf42b1-4744-4342-8d6d-eaca2d671edd
+		summarizeBy: none
+		sourceColumn: ExactDuplicateGroupSize
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics FactTransaction' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_FactTransaction = Source{[Schema="analytics",Item="FactTransaction"]}[Data]
+				in
+				    analytics_FactTransaction
+
+	annotation PBI_ResultType = Table
+

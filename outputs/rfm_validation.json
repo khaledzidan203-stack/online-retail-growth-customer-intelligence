@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "reference_date": "2011-12-10",
+  "checks": [
+    {
+      "check": "Segment customer count reconciles to governed SQL",
+      "actual": 5852,
+      "expected": 5852,
+      "difference": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Segment revenue reconciles to governed SQL",
+      "actual": 17125672.047,
+      "expected": 17125672.047,
+      "difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "check": "Segment orders reconciles to governed SQL",
+      "actual": 36597,
+      "expected": 36597,
+      "difference": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Segment units reconciles to governed SQL",
+      "actual": 10532303,
+      "expected": 10532303,
+      "difference": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Expected approved customer population",
+      "actual": true,
+      "expected": true,
+      "difference": null,
+      "status": "PASS"
+    },
+    {
+      "check": "Expected approved known-customer revenue",
+      "actual": true,
+      "expected": true,
+      "difference": null,
+      "status": "PASS"
+    },
+    {
+      "check": "One row per customer",
+      "actual": true,
+      "expected": true,
+      "difference": null,
+      "status": "PASS"
+    },
+    {
+      "check": "Every customer has one named segment",
+      "actual": true,
+      "expected": true,
+      "difference": null,
+      "status": "PASS"
+    },
+    {
+      "check": "No null segments",
+      "actual": true,
+      "expected": true,
+      "difference": null,
+      "status": "PASS"
+    },
+    {
+      "check": "All RFM scores are 1-5",
+      "actual": true,
+      "expected": true,
+      "difference": null,
+      "status": "PASS"
+    }
+  ],
+  "figures": [
+    "outputs/figures/rfm_customer_count_by_segment.png",
+    "outputs/figures/rfm_revenue_share_by_segment.png",
+    "outputs/figures/rfm_average_measures_by_segment.png"
+  ]
+}

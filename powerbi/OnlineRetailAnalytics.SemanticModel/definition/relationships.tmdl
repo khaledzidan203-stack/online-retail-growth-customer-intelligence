@@ -1,0 +1,42 @@
+relationship d54dad13-0108-464f-9c0d-71d1c2b7794b
+	fromColumn: 'analytics FactTransaction'.DateKey
+	toColumn: 'analytics DimDate'.DateKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship b62dfe1f-5c59-4aad-9320-368170613548
+	fromColumn: 'analytics FactTransaction'.CustomerKey
+	toColumn: 'analytics DimCustomer'.CustomerKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 091c74a3-4f34-4f7f-acf4-51b032efcfdd
+	fromColumn: 'analytics FactTransaction'.ProductKey
+	toColumn: 'analytics DimProduct'.ProductKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 4f15ef12-b258-4ab0-9b48-50953185abff
+	fromColumn: 'analytics FactTransaction'.CountryKey
+	toColumn: 'analytics DimCountry'.CountryKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 640ab0e8-3f65-45e2-9914-9cf69ac5a2a1
+	fromColumn: 'analytics CustomerRFM'.CustomerKey
+	toColumn: 'analytics DimCustomer'.CustomerKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship c898ad1b-5a3c-488f-8286-30d52256d3a0
+	fromColumn: 'analytics CustomerCohort'.CustomerKey
+	toColumn: 'analytics DimCustomer'.CustomerKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 99614360-55ef-4990-b37a-5fdf50d6a135
+	fromColumn: 'analytics CustomerRepeatBehavior'.CustomerKey
+	toColumn: 'analytics DimCustomer'.CustomerKey
+
+	annotation PBI_IsFromSource = FS
+

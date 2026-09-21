@@ -1,0 +1,107 @@
+{
+  "reference_date": "2011-12-10",
+  "method": "Observed 20th, 40th, 60th, and 80th percentile cutpoints; duplicate cutpoints are collapsed and values equal to a boundary remain in the lower value band. Identical raw values always receive the same score, so band sizes may differ.",
+  "directions": {
+    "Recency": "Lower values score higher.",
+    "Frequency": "Higher values score higher.",
+    "Monetary": "Higher values score higher."
+  },
+  "metrics": {
+    "Recency": [
+      {
+        "score": 1,
+        "minimum": 410,
+        "maximum": 739,
+        "customer_count": 1168
+      },
+      {
+        "score": 2,
+        "minimum": 188,
+        "maximum": 409,
+        "customer_count": 1171
+      },
+      {
+        "score": 3,
+        "minimum": 60,
+        "maximum": 187,
+        "customer_count": 1163
+      },
+      {
+        "score": 4,
+        "minimum": 22,
+        "maximum": 59,
+        "customer_count": 1135
+      },
+      {
+        "score": 5,
+        "minimum": 1,
+        "maximum": 20,
+        "customer_count": 1215
+      }
+    ],
+    "Frequency": [
+      {
+        "score": 1,
+        "minimum": 1,
+        "maximum": 1,
+        "customer_count": 1618
+      },
+      {
+        "score": 2,
+        "minimum": 2,
+        "maximum": 2,
+        "customer_count": 945
+      },
+      {
+        "score": 3,
+        "minimum": 3,
+        "maximum": 4,
+        "customer_count": 1148
+      },
+      {
+        "score": 4,
+        "minimum": 5,
+        "maximum": 8,
+        "customer_count": 1025
+      },
+      {
+        "score": 5,
+        "minimum": 9,
+        "maximum": 373,
+        "customer_count": 1116
+      }
+    ],
+    "Monetary": [
+      {
+        "score": 1,
+        "minimum": 2.95,
+        "maximum": 286.6,
+        "customer_count": 1171
+      },
+      {
+        "score": 2,
+        "minimum": 287.05,
+        "maximum": 605.9,
+        "customer_count": 1170
+      },
+      {
+        "score": 3,
+        "minimum": 606.02,
+        "maximum": 1212.84,
+        "customer_count": 1170
+      },
+      {
+        "score": 4,
+        "minimum": 1213.05,
+        "maximum": 2889.28,
+        "customer_count": 1170
+      },
+      {
+        "score": 5,
+        "minimum": 2900.58,
+        "maximum": 580987.04,
+        "customer_count": 1171
+      }
+    ]
+  }
+}

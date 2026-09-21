@@ -1,0 +1,452 @@
+{
+  "validation_status": "PASS",
+  "validations": [
+    {
+      "metric": "Sales Revenue",
+      "python_actual": 19701685.507,
+      "sql_expected": 19701685.507,
+      "difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Units Sold",
+      "python_actual": 11221960,
+      "sql_expected": 11221960,
+      "difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Orders",
+      "python_actual": 39519,
+      "sql_expected": 39519,
+      "difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Sales-known customers",
+      "python_actual": 5852,
+      "sql_expected": 5852,
+      "difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Average Order Value",
+      "python_actual": 498.53704564892837,
+      "sql_expected": 498.53704564,
+      "difference": 8.928395800467115e-09,
+      "status": "PASS"
+    },
+    {
+      "metric": "Known-customer sales revenue",
+      "python_actual": 17125672.047000002,
+      "sql_expected": 17125672.047,
+      "difference": 3.725290298461914e-09,
+      "status": "PASS"
+    },
+    {
+      "metric": "Repeat customers",
+      "python_actual": 4234,
+      "sql_expected": 4234,
+      "difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "metric": "One-time customers",
+      "python_actual": 1618,
+      "sql_expected": 1618,
+      "difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Cancellation Value",
+      "python_actual": 719692.9400000001,
+      "sql_expected": 719692.94,
+      "difference": 1.1641532182693481e-10,
+      "status": "PASS"
+    },
+    {
+      "metric": "Cancellation Invoices",
+      "python_actual": 7406,
+      "sql_expected": 7406,
+      "difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Cancellation Value Rate",
+      "python_actual": 0.03524213323149723,
+      "sql_expected": 0.035242,
+      "difference": 1.3323149723049044e-07,
+      "status": "PASS"
+    }
+  ],
+  "python_kpis": {
+    "Sales Revenue": 19701685.507,
+    "Units Sold": 11221960,
+    "Orders": 39519,
+    "Sales-known customers": 5852,
+    "Average Order Value": 498.53704564892837,
+    "Known-customer sales revenue": 17125672.047000002,
+    "Repeat customers": 4234,
+    "One-time customers": 1618,
+    "Cancellation Value": 719692.9400000001,
+    "Cancellation Invoices": 7406,
+    "Cancellation Value Rate": 0.03524213323149723
+  },
+  "distribution_highlights": {
+    "order_revenue": {
+      "grain": "Order",
+      "metric": "Revenue",
+      "count": 39519,
+      "mean": 498.53704564892837,
+      "std": 1460.3866953687104,
+      "min": 0.19,
+      "p25": 151.3,
+      "median": 301.8,
+      "p75": 486.565,
+      "p90": 908.0600000000004,
+      "p95": 1435.0829999999996,
+      "p99": 4103.7487999999985,
+      "max": 168469.6
+    },
+    "order_units": {
+      "grain": "Order",
+      "metric": "Units",
+      "count": 39519,
+      "mean": 283.96366304815405,
+      "std": 1204.1234957139213,
+      "min": 1.0,
+      "p25": 68.0,
+      "median": 149.0,
+      "p75": 290.0,
+      "p90": 524.2000000000044,
+      "p95": 798.0,
+      "p99": 2224.0,
+      "max": 87167.0
+    },
+    "customer_revenue": {
+      "grain": "Customer",
+      "metric": "Revenue",
+      "count": 5852,
+      "mean": 2926.4648063909776,
+      "std": 14312.552833453214,
+      "min": 2.95,
+      "p25": 342.195,
+      "median": 860.265,
+      "p75": 2247.5474999999997,
+      "p90": 5393.0760000000055,
+      "p95": 9270.270499999999,
+      "p99": 28675.14539999991,
+      "max": 580987.04
+    },
+    "customer_orders": {
+      "grain": "Customer",
+      "metric": "Orders",
+      "count": 5852,
+      "mean": 6.253759398496241,
+      "std": 12.75098507790221,
+      "min": 1.0,
+      "p25": 1.0,
+      "median": 3.0,
+      "p75": 7.0,
+      "p90": 13.0,
+      "p95": 20.0,
+      "p99": 46.0,
+      "max": 373.0
+    },
+    "customer_lifespan": {
+      "grain": "Customer",
+      "metric": "Lifespan days",
+      "count": 5852,
+      "mean": 273.8079289131921,
+      "std": 258.64559607801516,
+      "min": 0.0,
+      "p25": 0.0,
+      "median": 223.0,
+      "p75": 512.0,
+      "p90": 667.0,
+      "p95": 713.0,
+      "p99": 732.0,
+      "max": 738.0
+    },
+    "interpurchase_days": {
+      "grain": "Customer",
+      "metric": "Interpurchase days",
+      "count": 30745,
+      "mean": 52.11657180029273,
+      "std": 75.90028703269476,
+      "min": 0.0,
+      "p25": 7.0,
+      "median": 25.0,
+      "p75": 62.0,
+      "p90": 136.0,
+      "p95": 207.0,
+      "p99": 369.0,
+      "max": 714.0
+    },
+    "product_revenue": {
+      "grain": "Product",
+      "metric": "Revenue",
+      "count": 4726,
+      "mean": 4168.786607490478,
+      "std": 11202.82830906195,
+      "min": 0.017,
+      "p25": 287.735,
+      "median": 1129.295,
+      "p75": 3555.1925,
+      "p90": 10023.285,
+      "p95": 18067.8525,
+      "p99": 47014.8775,
+      "max": 331084.27
+    },
+    "product_units": {
+      "grain": "Product",
+      "metric": "Units",
+      "count": 4726,
+      "mean": 2374.5154464663565,
+      "std": 5913.665111151569,
+      "min": 1.0,
+      "p25": 122.0,
+      "median": 653.5,
+      "p75": 2184.75,
+      "p90": 5796.0,
+      "p95": 10054.5,
+      "p99": 26700.5,
+      "max": 106379.0
+    }
+  },
+  "extremes": {
+    "highest_revenue_product": {
+      "StockCode": "22423",
+      "RepresentativeDescription": "REGENCY CAKESTAND 3 TIER",
+      "ProductRevenue": 331084.27,
+      "ProductUnits": 26519,
+      "ProductOrders": 3918,
+      "KnownCustomers": 1314,
+      "AverageSellingPrice": "12.48479467"
+    },
+    "highest_units_product": {
+      "StockCode": "84077",
+      "RepresentativeDescription": "WORLD WAR 2 GLIDERS ASSTD DESIGNS",
+      "ProductRevenue": 24507.53,
+      "ProductUnits": 106379,
+      "ProductOrders": 1019,
+      "KnownCustomers": 482,
+      "AverageSellingPrice": "0.23037939"
+    },
+    "highest_revenue_customer": {
+      "CustomerID": "18102",
+      "CustomerRevenue": 580987.04,
+      "CustomerOrders": 145,
+      "CustomerUnits": 181645,
+      "FirstPurchaseDate": "2009-12-01",
+      "LastPurchaseDate": "2011-12-09",
+      "LifespanDays": 738
+    },
+    "highest_frequency_customer": {
+      "CustomerID": "14911",
+      "CustomerRevenue": 272393.03,
+      "CustomerOrders": 373,
+      "CustomerUnits": 147842,
+      "FirstPurchaseDate": "2009-12-01",
+      "LastPurchaseDate": "2011-12-08",
+      "LifespanDays": 737
+    }
+  },
+  "missing_customer_sensitivity": {
+    "known": {
+      "revenue": 17125672.047,
+      "units": 10532303,
+      "orders": 36597,
+      "lines": 788209,
+      "revenue_share": 0.8692490823140617,
+      "average_order_value": 467.95289359783584
+    },
+    "anonymous": {
+      "revenue": 2576013.46,
+      "units": 689657,
+      "orders": 2922,
+      "lines": 226882,
+      "revenue_share": 0.13075091768593827,
+      "average_order_value": 881.592559890486
+    },
+    "mixed_known_anonymous_orders": 0
+  },
+  "anomaly_summary": {
+    "event_rows": 1,
+    "event_invoices": 1,
+    "event_value": 168469.6,
+    "share_of_total_cancellation_value": 0.23408538647051338,
+    "cancellation_value_without_event": 551223.3400000001,
+    "official_cancellation_value_rate": 0.03524213323149723,
+    "cancellation_value_rate_without_event": 0.027216996045565628,
+    "december_2011_cancellation_value": 174126.76,
+    "december_2011_value_without_event": 5657.1600000000035,
+    "december_event_share": 0.9675112544447505,
+    "official_highest_cancellation_month": "2011-12",
+    "official_highest_month_value": 174126.76,
+    "highest_month_without_event": "2011-01",
+    "highest_month_value_without_event": 91526.30000000002,
+    "december_remains_highest_without_event": false
+  },
+  "anomaly_records": [
+    {
+      "TransactionLineKey": 371781,
+      "Invoice": "C525275",
+      "InvoiceDate": "2010-10-04T16:38:00",
+      "StockCode": "TEST001",
+      "RepresentativeDescription": "This is a test product.",
+      "CustomerID": "16446",
+      "Country": "United Kingdom",
+      "Quantity": -2,
+      "Price": "4.50000000",
+      "LineAmount": "-9.00000000",
+      "TransactionClass": "TEST_RECORD",
+      "IsExactDuplicateAfterFirst": false
+    },
+    {
+      "TransactionLineKey": 697293,
+      "Invoice": "553573",
+      "InvoiceDate": "2011-05-18T09:52:00",
+      "StockCode": "22980",
+      "RepresentativeDescription": "PANTRY SCRUBBING BRUSH",
+      "CustomerID": "16446",
+      "Country": "United Kingdom",
+      "Quantity": 1,
+      "Price": "1.65000000",
+      "LineAmount": "1.65000000",
+      "TransactionClass": "MERCHANDISE_SALE",
+      "IsExactDuplicateAfterFirst": false
+    },
+    {
+      "TransactionLineKey": 697294,
+      "Invoice": "553573",
+      "InvoiceDate": "2011-05-18T09:52:00",
+      "StockCode": "22982",
+      "RepresentativeDescription": "PANTRY PASTRY BRUSH",
+      "CustomerID": "16446",
+      "Country": "United Kingdom",
+      "Quantity": 1,
+      "Price": "1.25000000",
+      "LineAmount": "1.25000000",
+      "TransactionClass": "MERCHANDISE_SALE",
+      "IsExactDuplicateAfterFirst": false
+    },
+    {
+      "TransactionLineKey": 1043360,
+      "Invoice": "581483",
+      "InvoiceDate": "2011-12-09T09:15:00",
+      "StockCode": "23843",
+      "RepresentativeDescription": "PAPER CRAFT , LITTLE BIRDIE",
+      "CustomerID": "16446",
+      "Country": "United Kingdom",
+      "Quantity": 80995,
+      "Price": "2.08000000",
+      "LineAmount": "168469.60000000",
+      "TransactionClass": "MERCHANDISE_SALE",
+      "IsExactDuplicateAfterFirst": false
+    },
+    {
+      "TransactionLineKey": 1043361,
+      "Invoice": "C581484",
+      "InvoiceDate": "2011-12-09T09:27:00",
+      "StockCode": "23843",
+      "RepresentativeDescription": "PAPER CRAFT , LITTLE BIRDIE",
+      "CustomerID": "16446",
+      "Country": "United Kingdom",
+      "Quantity": -80995,
+      "Price": "2.08000000",
+      "LineAmount": "-168469.60000000",
+      "TransactionClass": "CUSTOMER_CANCELLATION",
+      "IsExactDuplicateAfterFirst": false
+    }
+  ],
+  "duplicate_sensitivity": [
+    {
+      "sensitivity": "Duplicate-after-first exclusion",
+      "metric": "Revenue",
+      "official_value": 19701685.507,
+      "comparison_value": 19644592.687,
+      "absolute_difference": -57092.8200000003,
+      "percent_impact": -0.0028978647527245953
+    },
+    {
+      "sensitivity": "Duplicate-after-first exclusion",
+      "metric": "Units",
+      "official_value": 11221960.0,
+      "comparison_value": 11188064.0,
+      "absolute_difference": -33896.0,
+      "percent_impact": -0.0030205062217295376
+    },
+    {
+      "sensitivity": "Duplicate-after-first exclusion",
+      "metric": "Orders",
+      "official_value": 39519.0,
+      "comparison_value": 39519.0,
+      "absolute_difference": 0.0,
+      "percent_impact": 0.0
+    },
+    {
+      "sensitivity": "Duplicate-after-first exclusion",
+      "metric": "AOV",
+      "official_value": 498.53704564892837,
+      "comparison_value": 497.09235271641484,
+      "absolute_difference": -1.444692932513533,
+      "percent_impact": -0.0028978647527246972
+    },
+    {
+      "sensitivity": "Duplicate-after-first exclusion",
+      "metric": "CancellationValue",
+      "official_value": 719692.94,
+      "comparison_value": 716462.57,
+      "absolute_difference": -3230.3699999999953,
+      "percent_impact": -0.004488539237303058
+    },
+    {
+      "sensitivity": "StockCode 23843 / Customer 16446 exclusion",
+      "metric": "CancellationValue",
+      "official_value": 719692.9400000001,
+      "comparison_value": 551223.3400000001,
+      "absolute_difference": -168469.6,
+      "percent_impact": -0.23408538647051338
+    }
+  ],
+  "forecasting_readiness": {
+    "status": "CONDITIONAL",
+    "evidence": {
+      "start_date": "2009-12-01",
+      "end_date": "2011-12-09",
+      "covered_calendar_days": 739,
+      "expected_calendar_days": 739,
+      "missing_calendar_dates": 0,
+      "zero_revenue_days": 135,
+      "daily_revenue_p99": 85998.72200000001,
+      "daily_revenue_max": 198114.26,
+      "daily_max_to_p99_ratio": 2.3036884199279144,
+      "weekly_observations": 106,
+      "weekly_revenue_p99": 374506.34855000005,
+      "weekly_revenue_max": 484267.31,
+      "daily_lag7_autocorrelation": 0.6411010466469264,
+      "daily_lag28_autocorrelation": 0.5163443136299116,
+      "daily_lag365_autocorrelation": 0.4508828411180143,
+      "monthly_linear_slope": 10522.080336923074,
+      "weekday_mean_max_to_min_ratio": 406.2132232623405
+    },
+    "reasons": [
+      "Daily coverage is complete enough to construct regular series.",
+      "The history is only about two years and has partial boundary periods.",
+      "Extreme wholesale transactions and cancellations create material spikes.",
+      "Trend and recurring calendar patterns exist but require robust treatment and backtesting."
+    ],
+    "forecast_created": false
+  },
+  "figures": [
+    "outputs/figures/checkpoint5a_monthly_revenue.png",
+    "outputs/figures/checkpoint5a_order_revenue_distribution.png",
+    "outputs/figures/checkpoint5a_customer_revenue_distribution.png",
+    "outputs/figures/checkpoint5a_customer_order_distribution.png",
+    "outputs/figures/checkpoint5a_product_concentration.png",
+    "outputs/figures/checkpoint5a_country_revenue.png",
+    "outputs/figures/checkpoint5a_cancellation_distribution.png",
+    "outputs/figures/checkpoint5a_duplicate_sensitivity.png"
+  ]
+}

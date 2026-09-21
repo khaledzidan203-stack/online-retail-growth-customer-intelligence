@@ -1,0 +1,173 @@
+table 'analytics CustomerRFM'
+	lineageTag: 849e422f-b66d-496c-b617-21e4a960f84f
+
+	column CustomerKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 353a7113-b99a-4415-b036-9e6bde2ee821
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: c906ddc7-3b11-4681-9b01-bb8ba17428dd
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReferenceDate
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 6879bede-f574-45fa-963e-2c72ec5b5276
+		summarizeBy: none
+		sourceColumn: ReferenceDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Recency
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d61cb8a-b930-4cb9-94c0-fcd211780270
+		summarizeBy: none
+		sourceColumn: Recency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Frequency
+		dataType: int64
+		formatString: 0
+		lineageTag: c4f6db64-c559-4d6d-9be9-da90b7b5b317
+		summarizeBy: none
+		sourceColumn: Frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monetary
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: b44414cd-c6b5-4435-a64f-8101eba9f9eb
+		summarizeBy: none
+		sourceColumn: Monetary
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column R_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: d1fbb00f-09ec-4a1d-b25c-2baf504d7253
+		summarizeBy: none
+		sourceColumn: R_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column F_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e48ea26-8780-4f6a-8c8d-a33ba6005d7a
+		summarizeBy: none
+		sourceColumn: F_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column M_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 946d4f65-42a7-4a6f-b17e-9950231f3490
+		summarizeBy: none
+		sourceColumn: M_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFM_Code
+		dataType: string
+		lineageTag: 6ec2cbda-f79d-4631-823e-0cf13134c7aa
+		summarizeBy: none
+		sourceColumn: RFM_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFM_Total
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 300f9d9e-71a3-44a1-839f-48e866e153ee
+		summarizeBy: none
+		sourceColumn: RFM_Total
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 9331589c-b8b4-4fda-a846-fe051dbf5e51
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstPurchaseDate
+		dataType: dateTime
+		formatString: yyyy-MM-dd HH:mm
+		lineageTag: ee9bfea8-2f3a-4c8c-baaa-4f9f13f5f503
+		summarizeBy: none
+		sourceColumn: FirstPurchaseDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastPurchaseDate
+		dataType: dateTime
+		formatString: yyyy-MM-dd HH:mm
+		lineageTag: a66a2cbe-7314-46bd-9ba4-a2d9a7dbeade
+		summarizeBy: none
+		sourceColumn: LastPurchaseDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitsPurchased
+		dataType: int64
+		formatString: 0
+		lineageTag: b2c8693b-7657-4298-8833-0ea108e74400
+		summarizeBy: none
+		sourceColumn: UnitsPurchased
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveLifespanDays
+		dataType: int64
+		formatString: 0
+		lineageTag: 67eca37b-7063-44e3-b501-e8671d67d3b5
+		summarizeBy: none
+		sourceColumn: ActiveLifespanDays
+
+		annotation SummarizationSetBy = Automatic
+
+	column AverageOrderValue
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 08051c38-0c01-4bef-a905-60a6fffee7d4
+		summarizeBy: none
+		sourceColumn: AverageOrderValue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'analytics CustomerRFM' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_CustomerRFM = Source{[Schema="analytics",Item="CustomerRFM"]}[Data]
+				in
+				    analytics_CustomerRFM
+
+	annotation PBI_ResultType = Table
+

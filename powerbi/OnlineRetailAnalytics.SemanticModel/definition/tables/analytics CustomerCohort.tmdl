@@ -1,0 +1,60 @@
+table 'analytics CustomerCohort'
+	lineageTag: 0a9b9a52-30ec-46b9-b2cc-4a155cbe6185
+
+	column CustomerKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3ae58e3c-d7b1-47c3-854c-deafd0743d04
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: b3d52a55-55a1-4680-ab6c-a12becc944f8
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstPurchaseDate
+		dataType: dateTime
+		formatString: yyyy-MM-dd HH:mm
+		lineageTag: 43df72da-53f6-4539-9634-f808911a8a97
+		summarizeBy: none
+		sourceColumn: FirstPurchaseDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcquisitionCohort
+		dataType: string
+		lineageTag: 9e64e180-f561-4316-9d7b-2ebf4d2a3191
+		summarizeBy: none
+		sourceColumn: AcquisitionCohort
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLeftBoundaryAffected
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f0412048-bb12-4950-9534-7b73fa20b880
+		summarizeBy: none
+		sourceColumn: IsLeftBoundaryAffected
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics CustomerCohort' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_CustomerCohort = Source{[Schema="analytics",Item="CustomerCohort"]}[Data]
+				in
+				    analytics_CustomerCohort
+
+	annotation PBI_ResultType = Table
+

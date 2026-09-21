@@ -1,0 +1,441 @@
+{
+  "generated_at_utc": "2026-09-19T18:43:48.766638+00:00",
+  "server": "localhost",
+  "database": "OnlineRetailAnalytics",
+  "validation_status": "PASS",
+  "failed_validations": [],
+  "exports": {
+    "checkpoint4_kpi_overview.csv": 1,
+    "checkpoint4_monthly_performance.csv": 25,
+    "checkpoint4_time_performance.csv": 35,
+    "checkpoint4_product_top.csv": 100,
+    "checkpoint4_customer_top.csv": 100,
+    "checkpoint4_country_performance.csv": 43,
+    "checkpoint4_cancellation_summary.csv": 25
+  },
+  "kpi_overview": {
+    "SalesRevenue": "19701685.50700000",
+    "UnitsSold": 11221960,
+    "SalesEligibleRows": 1015091,
+    "Orders": 39519,
+    "KnownCustomers": 5852,
+    "AverageOrderValue": "498.53704564",
+    "AverageUnitsPerOrder": "283.96366305",
+    "OneTimeCustomers": 1618,
+    "RepeatCustomers": 4234,
+    "RepeatCustomerRate": "0.72351333",
+    "AveragePurchaseFrequency": "6.25375940",
+    "RevenuePerKnownCustomer": "2926.46480639",
+    "OrdersPerKnownCustomer": "6.25375940",
+    "SalesKnownCustomers": 5852,
+    "KnownCustomerOrders": 36597,
+    "KnownCustomerRevenue": "17125672.04700000",
+    "KnownCustomerUnits": 10532303,
+    "CancellationValue": "719692.94000000",
+    "CancellationUnits": 469882,
+    "CancellationEligibleRows": 17974,
+    "CancellationInvoices": 7406,
+    "CustomersWithCancellations": 2445,
+    "CancellationValueRate": "0.03524200",
+    "ModelKnownCustomers": 5942
+  },
+  "concentration": {
+    "product": {
+      "Top10Share": "0.0803050000",
+      "Top20Share": "0.1148600000",
+      "Top100Share": "0.2942940000",
+      "EntitiesTo50Percent": 284,
+      "EntitiesTo80Percent": 1031,
+      "EntitiesTo90Percent": 1685
+    },
+    "customer": {
+      "Top10Share": "0.1609130000",
+      "Top20Share": "0.2191480000",
+      "Top100Share": "0.3755480000",
+      "EntitiesTo50Percent": 260,
+      "EntitiesTo80Percent": 1357,
+      "EntitiesTo90Percent": 2343
+    },
+    "country": {
+      "Top10Share": "0.9765290000",
+      "Top20Share": "0.9941830000",
+      "AllMarketShare": "1.0000000000",
+      "EntitiesTo50Percent": 1,
+      "EntitiesTo80Percent": 1,
+      "EntitiesTo90Percent": 3
+    }
+  },
+  "top_products": [
+    {
+      "Ranking": "Revenue",
+      "StockCode": "22423",
+      "RepresentativeDescription": "REGENCY CAKESTAND 3 TIER",
+      "MetricValue": "331084.27000000"
+    },
+    {
+      "Ranking": "Units",
+      "StockCode": "84077",
+      "RepresentativeDescription": "WORLD WAR 2 GLIDERS ASSTD DESIGNS",
+      "MetricValue": "106379.00000000"
+    },
+    {
+      "Ranking": "Orders",
+      "StockCode": "85123A",
+      "RepresentativeDescription": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "MetricValue": "5464.00000000"
+    },
+    {
+      "Ranking": "Known Customers",
+      "StockCode": "85123A",
+      "RepresentativeDescription": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "MetricValue": "1490.00000000"
+    }
+  ],
+  "yearly_performance": [
+    {
+      "PeriodType": "YEAR",
+      "PeriodKey": "2009",
+      "Year": 2009,
+      "Quarter": null,
+      "DayOfWeekNumber": null,
+      "DayName": null,
+      "HourOfDay": null,
+      "SalesRevenue": "801102.97000000",
+      "UnitsSold": 426738,
+      "Orders": 1666,
+      "KnownCustomers": 951,
+      "AverageOrderValue": "480.85412364",
+      "CancellationValue": "19561.28000000",
+      "CancellationValueRate": "0.02383500"
+    },
+    {
+      "PeriodType": "YEAR",
+      "PeriodKey": "2010",
+      "Year": 2010,
+      "Quarter": null,
+      "DayOfWeekNumber": null,
+      "DayName": null,
+      "HourOfDay": null,
+      "SalesRevenue": "9407081.24400000",
+      "UnitsSold": 5576868,
+      "Orders": 19630,
+      "KnownCustomers": 4205,
+      "AverageOrderValue": "479.21962526",
+      "CancellationValue": "239015.34000000",
+      "CancellationValueRate": "0.02477800"
+    },
+    {
+      "PeriodType": "YEAR",
+      "PeriodKey": "2011",
+      "Year": 2011,
+      "Quarter": null,
+      "DayOfWeekNumber": null,
+      "DayName": null,
+      "HourOfDay": null,
+      "SalesRevenue": "9493501.29300000",
+      "UnitsSold": 5218354,
+      "Orders": 18223,
+      "KnownCustomers": 4214,
+      "AverageOrderValue": "520.96259084",
+      "CancellationValue": "461116.32000000",
+      "CancellationValueRate": "0.04632100"
+    }
+  ],
+  "like_for_like_2010_2011": [
+    {
+      "CalendarYear": 2010,
+      "SalesRevenue": "9038376.03400000",
+      "Orders": 18910,
+      "Units": 5398833,
+      "CancellationValue": "228270.53000000"
+    },
+    {
+      "CalendarYear": 2011,
+      "SalesRevenue": "9493501.29300000",
+      "Orders": 18223,
+      "Units": 5218354,
+      "CancellationValue": "461116.32000000"
+    }
+  ],
+  "time_headlines": {
+    "top_month": {
+      "PeriodStart": "2011-11-01",
+      "YearMonth": "2011-11",
+      "Year": 2011,
+      "MonthNumber": 11,
+      "SalesRevenue": "1457745.53000000",
+      "UnitsSold": 750082,
+      "Orders": 2751,
+      "KnownCustomers": 1660,
+      "AverageOrderValue": "529.89659396",
+      "CancellationValue": "25010.54000000",
+      "CancellationUnits": 12332,
+      "CancellationInvoices": 396,
+      "CancellationValueRate": "0.01686700"
+    },
+    "top_quarter": {
+      "PeriodType": "QUARTER",
+      "PeriodKey": "2010-Q4",
+      "Year": 2010,
+      "Quarter": 4,
+      "DayOfWeekNumber": null,
+      "DayName": null,
+      "HourOfDay": null,
+      "SalesRevenue": "3311629.56200000",
+      "UnitsSold": 1707912,
+      "Orders": 6513,
+      "KnownCustomers": 2665,
+      "AverageOrderValue": "508.46454199",
+      "CancellationValue": "78278.76000000",
+      "CancellationValueRate": "0.02309100"
+    },
+    "top_day_of_week": {
+      "PeriodType": "DAY_OF_WEEK",
+      "PeriodKey": "DOW-4",
+      "Year": null,
+      "Quarter": null,
+      "DayOfWeekNumber": 4,
+      "DayName": "Thursday",
+      "HourOfDay": null,
+      "SalesRevenue": "4020053.57200000",
+      "UnitsSold": 2322898,
+      "Orders": 8167,
+      "KnownCustomers": 2986,
+      "AverageOrderValue": "492.23136671",
+      "CancellationValue": "104818.88000000",
+      "CancellationValueRate": "0.02541100"
+    },
+    "top_hour": {
+      "PeriodType": "HOUR_OF_DAY",
+      "PeriodKey": "HOUR-12",
+      "Year": null,
+      "Quarter": null,
+      "DayOfWeekNumber": null,
+      "DayName": null,
+      "HourOfDay": 12,
+      "SalesRevenue": "2796072.68100000",
+      "UnitsSold": 1669562,
+      "Orders": 6369,
+      "KnownCustomers": 2582,
+      "AverageOrderValue": "439.01282477",
+      "CancellationValue": "43137.98000000",
+      "CancellationValueRate": "0.01519300"
+    }
+  },
+  "market_headlines": {
+    "uk_vs_non_uk": [
+      {
+        "Market": "Non-UK",
+        "SalesRevenue": "2844623.50100000",
+        "RevenueShare": "0.1443840000"
+      },
+      {
+        "Market": "United Kingdom",
+        "SalesRevenue": "16857062.00600000",
+        "RevenueShare": "0.8556150000"
+      }
+    ],
+    "top_revenue": {
+      "CountryKey": 47,
+      "Country": "United Kingdom",
+      "SalesRevenue": "16857062.00600000",
+      "Orders": 36187,
+      "UnitsSold": 9209210,
+      "KnownCustomers": 5334,
+      "AverageOrderValue": "465.83198402",
+      "RevenuePerKnownCustomer": "3160.30408811",
+      "CancellationValue": "635249.66000000",
+      "CancellationValueRate": "0.03631500",
+      "RevenueShare": "0.8556150000",
+      "CumulativeRevenueShare": "0.8556150000",
+      "RevenueRank": 1,
+      "MeetsCancellationRateMinimumBase": true
+    },
+    "top_aov_min_100_orders": {
+      "CountryKey": 56,
+      "Country": "Netherlands",
+      "SalesRevenue": "549775.06000000",
+      "Orders": 216,
+      "UnitsSold": 383626,
+      "KnownCustomers": 22,
+      "AverageOrderValue": "2545.25490740",
+      "RevenuePerKnownCustomer": "24989.77545454",
+      "CancellationValue": "3677.98000000",
+      "CancellationValueRate": "0.00664500",
+      "RevenueShare": "0.0279040000",
+      "CumulativeRevenueShare": "0.9151820000",
+      "RevenueRank": 3,
+      "MeetsCancellationRateMinimumBase": true
+    },
+    "top_known_customers": {
+      "CountryKey": 47,
+      "Country": "United Kingdom",
+      "SalesRevenue": "16857062.00600000",
+      "Orders": 36187,
+      "UnitsSold": 9209210,
+      "KnownCustomers": 5334,
+      "AverageOrderValue": "465.83198402",
+      "RevenuePerKnownCustomer": "3160.30408811",
+      "CancellationValue": "635249.66000000",
+      "CancellationValueRate": "0.03631500",
+      "RevenueShare": "0.8556150000",
+      "CumulativeRevenueShare": "0.8556150000",
+      "RevenueRank": 1,
+      "MeetsCancellationRateMinimumBase": true
+    },
+    "top_cancellation_rate_min_100_orders": {
+      "CountryKey": 48,
+      "Country": "Spain",
+      "SalesRevenue": "97818.07000000",
+      "Orders": 144,
+      "UnitsSold": 50018,
+      "KnownCustomers": 38,
+      "AverageOrderValue": "679.29215277",
+      "RevenuePerKnownCustomer": "2574.15973684",
+      "CancellationValue": "12955.19000000",
+      "CancellationValueRate": "0.11695200",
+      "RevenueShare": "0.0049640000",
+      "CumulativeRevenueShare": "0.9639500000",
+      "RevenueRank": 7,
+      "MeetsCancellationRateMinimumBase": true
+    }
+  },
+  "cancellation_headlines": {
+    "top_product": {
+      "StockCode": "23843",
+      "RepresentativeDescription": "PAPER CRAFT , LITTLE BIRDIE",
+      "CancellationValue": "168469.60000000",
+      "CancellationUnits": 80995
+    },
+    "top_customer": {
+      "CustomerID": "16446",
+      "CancellationValue": "168469.60000000"
+    },
+    "top_country": {
+      "Country": "United Kingdom",
+      "CancellationValue": "635249.66000000"
+    },
+    "top_month": {
+      "PeriodStart": "2011-12-01",
+      "YearMonth": "2011-12",
+      "CancellationValue": "174126.76000000",
+      "CancellationUnits": 83550,
+      "CancellationInvoices": 137,
+      "KnownCustomersWithCancellations": 130,
+      "SalesRevenue": "615493.27000000",
+      "CancellationValueRate": "0.22051900",
+      "OperationalAdjustmentRows": 30,
+      "OperationalAdjustmentLineAmount": "0.00000000"
+    }
+  },
+  "validations": [
+    {
+      "Metric": "Sales Revenue",
+      "ActualValue": "19701685.50700000",
+      "ExpectedValue": "19701685.50700000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Sales eligible rows",
+      "ActualValue": "1015091.00000000",
+      "ExpectedValue": "1015091.00000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Sales eligible Orders",
+      "ActualValue": "39519.00000000",
+      "ExpectedValue": "39519.00000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Cancellation Value",
+      "ActualValue": "719692.94000000",
+      "ExpectedValue": "719692.94000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Cancellation eligible rows",
+      "ActualValue": "17974.00000000",
+      "ExpectedValue": "17974.00000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Known Customer population",
+      "ActualValue": "5942.00000000",
+      "ExpectedValue": "5942.00000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Product revenue reconciles to merchandise sales",
+      "ActualValue": "19701685.50700000",
+      "ExpectedValue": "19701685.50700000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Non-merchandise products in product ranking",
+      "ActualValue": "0.00000000",
+      "ExpectedValue": "0.00000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Customer revenue reconciles to known-customer sales",
+      "ActualValue": "17125672.04700000",
+      "ExpectedValue": "17125672.04700000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Missing Customer IDs in customer KPI view",
+      "ActualValue": "0.00000000",
+      "ExpectedValue": "0.00000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "One-time plus repeat customer reconciliation",
+      "ActualValue": "5852.00000000",
+      "ExpectedValue": "5852.00000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Operational adjustments in cancellation population",
+      "ActualValue": "0.00000000",
+      "ExpectedValue": "0.00000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Monthly revenue reconciles to overall",
+      "ActualValue": "19701685.50700000",
+      "ExpectedValue": "19701685.50700000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Monthly cancellation value reconciles to overall",
+      "ActualValue": "719692.94000000",
+      "ExpectedValue": "719692.94000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Country revenue reconciles to overall",
+      "ActualValue": "19701685.50700000",
+      "ExpectedValue": "19701685.50700000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Country cancellation value reconciles to overall",
+      "ActualValue": "719692.94000000",
+      "ExpectedValue": "719692.94000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Cancellation view value reconciles to overall",
+      "ActualValue": "719692.94000000",
+      "ExpectedValue": "719692.94000000",
+      "ValidationStatus": "PASS"
+    },
+    {
+      "Metric": "Customer revenue excluded from total for missing IDs",
+      "ActualValue": "2576013.46000000",
+      "ExpectedValue": "2576013.46000000",
+      "ValidationStatus": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "CONDITIONAL",
+  "evidence": {
+    "start_date": "2009-12-01",
+    "end_date": "2011-12-09",
+    "covered_calendar_days": 739,
+    "expected_calendar_days": 739,
+    "missing_calendar_dates": 0,
+    "zero_revenue_days": 135,
+    "daily_revenue_p99": 85998.72200000001,
+    "daily_revenue_max": 198114.26,
+    "daily_max_to_p99_ratio": 2.3036884199279144,
+    "weekly_observations": 106,
+    "weekly_revenue_p99": 374506.34855000005,
+    "weekly_revenue_max": 484267.31,
+    "daily_lag7_autocorrelation": 0.6411010466469264,
+    "daily_lag28_autocorrelation": 0.5163443136299116,
+    "daily_lag365_autocorrelation": 0.4508828411180143,
+    "monthly_linear_slope": 10522.080336923074,
+    "weekday_mean_max_to_min_ratio": 406.2132232623405
+  },
+  "reasons": [
+    "Daily coverage is complete enough to construct regular series.",
+    "The history is only about two years and has partial boundary periods.",
+    "Extreme wholesale transactions and cancellations create material spikes.",
+    "Trend and recurring calendar patterns exist but require robust treatment and backtesting."
+  ],
+  "forecast_created": false
+}

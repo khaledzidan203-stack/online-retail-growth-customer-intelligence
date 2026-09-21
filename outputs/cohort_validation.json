@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "observation_window": {
+    "start": "2009-12-01T07:45:00",
+    "end": "2011-12-09T12:50:00",
+    "left_boundary_cohort": "2009-12",
+    "partial_final_month": "2011-12 through 2011-12-09"
+  },
+  "cohort_count": 25,
+  "retention_checkpoint_metrics": {
+    "month_1": {
+      "eligible_cohorts": 23,
+      "eligible_original_customers": 5633,
+      "active_customers": 1315,
+      "cohort_size_weighted_retention": 0.2334457660216581,
+      "median_cohort_retention": 0.2079207920792079
+    },
+    "month_2": {
+      "eligible_cohorts": 22,
+      "eligible_original_customers": 5412,
+      "active_customers": 1277,
+      "cohort_size_weighted_retention": 0.23595713229859572,
+      "median_cohort_retention": 0.22004965859714462
+    },
+    "month_3": {
+      "eligible_cohorts": 21,
+      "eligible_original_customers": 5224,
+      "active_customers": 1305,
+      "cohort_size_weighted_retention": 0.24980857580398164,
+      "median_cohort_retention": 0.2011173184357542
+    },
+    "month_6": {
+      "eligible_cohorts": 18,
+      "eligible_original_customers": 4908,
+      "active_customers": 1088,
+      "cohort_size_weighted_retention": 0.22167889160554197,
+      "median_cohort_retention": 0.16962264150943396
+    },
+    "month_12": {
+      "eligible_cohorts": 12,
+      "eligible_original_customers": 4239,
+      "active_customers": 964,
+      "cohort_size_weighted_retention": 0.22741212550129747,
+      "median_cohort_retention": 0.17247058823529413
+    }
+  },
+  "repeat_purchase_summary": {
+    "eligible_customers": 5852,
+    "customers_with_second_purchase": 4234,
+    "customers_without_second_purchase": 1618,
+    "observed_repeat_purchase_rate": 0.7235133287764867,
+    "days_to_second_purchase": {
+      "mean": 99.01865847897969,
+      "median": 57.0,
+      "p25": 21.0,
+      "p75": 133.0,
+      "p90": 260.0
+    },
+    "windows": {
+      "within_30_days": {
+        "customers": 1326,
+        "share_of_all_customers": 0.2265892002734108,
+        "share_of_repeat_customers": 0.31317902692489374
+      },
+      "within_60_days": {
+        "customers": 2186,
+        "share_of_all_customers": 0.3735475051264525,
+        "share_of_repeat_customers": 0.5162966461974492
+      },
+      "within_90_days": {
+        "customers": 2686,
+        "share_of_all_customers": 0.4589883800410116,
+        "share_of_repeat_customers": 0.6343882853094001
+      },
+      "within_180_days": {
+        "customers": 3505,
+        "share_of_all_customers": 0.5989405331510594,
+        "share_of_repeat_customers": 0.8278223901747757
+      }
+    },
+    "right_censoring_note": "Observation ends 2011-12-09; later acquisitions have less opportunity to record a second purchase."
+  },
+  "checks": [
+    {
+      "check": "All governed customers have one customer row",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Expected approved customer population",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Every customer ID is unique",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "No anonymous customer IDs",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Every customer has one acquisition cohort",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Cohort sizes sum to governed customers",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Month 0 active customers equal cohort size",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Month 0 retention is 100 percent",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "No negative cohort index",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "No retention above 100 percent",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Cohort revenue reconciles to governed SQL",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Expected approved known-customer revenue",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Cohort orders reconcile to governed SQL",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Expected approved known-customer orders",
+      "actual": true,
+      "expected": true,
+      "status": "PASS"
+    }
+  ],
+  "figures": [
+    "outputs/figures/cohort_customer_retention_heatmap.png",
+    "outputs/figures/cohort_size_by_month.png",
+    "outputs/figures/cohort_retention_checkpoint_trends.png",
+    "outputs/figures/customer_days_to_second_purchase.png"
+  ]
+}

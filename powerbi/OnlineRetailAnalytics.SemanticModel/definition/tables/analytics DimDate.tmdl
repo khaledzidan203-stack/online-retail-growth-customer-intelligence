@@ -1,0 +1,119 @@
+table 'analytics DimDate'
+	lineageTag: e5c72d4e-f122-41c6-a800-6a82a1b4bc13
+	dataCategory: Time
+
+	column DateKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1f252d64-c0bc-438c-943d-f53e25ddcdbc
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullDate
+		dataType: dateTime
+		isKey
+		formatString: yyyy-MM-dd
+		lineageTag: aa2c108e-e3bd-4654-8e05-fb803ccbe107
+		summarizeBy: none
+		sourceColumn: FullDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 63688ab4-ce58-4258-ba9f-149f34f3971c
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f85fb71-22aa-4827-aad8-f5b06a4ad891
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c94fffb5-901f-4c27-a99b-5e797cc60603
+		summarizeBy: none
+		sourceColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: 88562f56-232d-47d1-9fac-ab9dd233a129
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		dataType: string
+		lineageTag: 9cea8bb6-7447-41e6-a08f-3dd091319547
+		summarizeBy: none
+		sourceColumn: YearMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ee0d411-93c7-4f1e-96de-17326ab48e9d
+		summarizeBy: none
+		sourceColumn: WeekOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: int64
+		formatString: 0
+		lineageTag: 45c296ae-a3f7-4d95-a677-dcf337a73419
+		summarizeBy: none
+		sourceColumn: DayOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		dataType: string
+		lineageTag: 3e553acf-c74e-4381-b06f-06bdbb1de009
+		summarizeBy: none
+		sourceColumn: DayName
+		sortByColumn: DayOfWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekNumber
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fcb70b81-f8ac-4e37-991c-6c242c4fad6f
+		summarizeBy: none
+		sourceColumn: DayOfWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics DimDate' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_DimDate = Source{[Schema="analytics",Item="DimDate"]}[Data]
+				in
+				    analytics_DimDate
+
+	annotation PBI_ResultType = Table
+

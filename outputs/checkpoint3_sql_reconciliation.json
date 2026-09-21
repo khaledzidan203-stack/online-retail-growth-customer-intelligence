@@ -1,0 +1,241 @@
+{
+  "generated_at_utc": "2026-09-19T18:23:26.360091+00:00",
+  "connection": {
+    "server_argument": "localhost",
+    "server_name": "khalez_zidan",
+    "product_version": "17.0.1000.7",
+    "windows_login": "khalez_zidan\\khale",
+    "database": "OnlineRetailAnalytics",
+    "authentication": "Windows Authentication"
+  },
+  "source": {
+    "path": "data/interim/canonical_transactions.parquet",
+    "loaded_rows": 1044848
+  },
+  "validations": [
+    {
+      "metric": "Raw rows",
+      "actual": 1044848,
+      "expected": 1044848,
+      "status": "PASS"
+    },
+    {
+      "metric": "Staging rows",
+      "actual": 1044848,
+      "expected": 1044848,
+      "status": "PASS"
+    },
+    {
+      "metric": "FactTransaction rows",
+      "actual": 1044848,
+      "expected": 1044848,
+      "status": "PASS"
+    },
+    {
+      "metric": "DimCustomer rows",
+      "actual": 5942,
+      "expected": 5942,
+      "status": "PASS"
+    },
+    {
+      "metric": "DimCountry rows",
+      "actual": 43,
+      "expected": 43,
+      "status": "PASS"
+    },
+    {
+      "metric": "DimProduct rows",
+      "actual": 5131,
+      "expected": 5131,
+      "status": "PASS"
+    },
+    {
+      "metric": "Governed StockCodes vs Checkpoint 1 trimmed baseline",
+      "actual": 5131,
+      "expected": 5304,
+      "status": "REVIEW"
+    },
+    {
+      "metric": "DimDate rows",
+      "actual": 739,
+      "expected": 739,
+      "status": "PASS"
+    },
+    {
+      "metric": "MERCHANDISE_SALE rows",
+      "actual": 1015091,
+      "expected": 1015091,
+      "status": "PASS"
+    },
+    {
+      "metric": "CUSTOMER_CANCELLATION rows",
+      "actual": 17974,
+      "expected": 17974,
+      "status": "PASS"
+    },
+    {
+      "metric": "NON_MERCHANDISE rows",
+      "actual": 5719,
+      "expected": 5719,
+      "status": "PASS"
+    },
+    {
+      "metric": "OPERATIONAL_STOCK_ADJUSTMENT rows",
+      "actual": 3392,
+      "expected": 3392,
+      "status": "PASS"
+    },
+    {
+      "metric": "ZERO_PRICE_MERCHANDISE rows",
+      "actual": 2582,
+      "expected": 2582,
+      "status": "PASS"
+    },
+    {
+      "metric": "ACCOUNTING_ADJUSTMENT rows",
+      "actual": 73,
+      "expected": 73,
+      "status": "PASS"
+    },
+    {
+      "metric": "TEST_RECORD rows",
+      "actual": 17,
+      "expected": 17,
+      "status": "PASS"
+    },
+    {
+      "metric": "DQ_REVIEW rows",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "MERCHANDISE_SALE LineAmount",
+      "actual": "19701685.507",
+      "expected": "19701685.507",
+      "status": "PASS"
+    },
+    {
+      "metric": "CUSTOMER_CANCELLATION absolute LineAmount",
+      "actual": "719692.94",
+      "expected": "719692.94",
+      "status": "PASS"
+    },
+    {
+      "metric": "Known-customer rows",
+      "actual": 809561,
+      "expected": 809561,
+      "status": "PASS"
+    },
+    {
+      "metric": "Unknown-customer rows",
+      "actual": 235287,
+      "expected": 235287,
+      "status": "PASS"
+    },
+    {
+      "metric": "Duplicate-extra flags",
+      "actual": 11812,
+      "expected": 11812,
+      "status": "PASS"
+    },
+    {
+      "metric": "Eligible merchandise-sale distinct invoices",
+      "actual": 39519,
+      "expected": 39519,
+      "status": "PASS"
+    },
+    {
+      "metric": "Known distinct Customer IDs",
+      "actual": 5942,
+      "expected": 5942,
+      "status": "PASS"
+    },
+    {
+      "metric": "Broken Date relationships",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Broken Product relationships",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Broken Country relationships",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Known customers with null CustomerKey",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Unknown customers with populated CustomerKey",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Duplicate DimDate business keys",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Duplicate DimCustomer business keys",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Duplicate DimProduct business keys",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Duplicate DimCountry business keys",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Staging rows missing from fact",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Fact rows after dimension joins",
+      "actual": 1044848,
+      "expected": 1044848,
+      "status": "PASS"
+    },
+    {
+      "metric": "StockCodes with inconsistent ItemClass",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "Representative product-description mismatches",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "metric": "StockCodes with multiple normalized descriptions",
+      "actual": 1188,
+      "expected": null,
+      "status": "REVIEW"
+    }
+  ],
+  "failed_metrics": [],
+  "overall_status": "PASS"
+}

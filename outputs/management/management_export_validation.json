@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "generated_utc": "2026-09-21T11:56:48+00:00",
+  "sql_validation": "PASS",
+  "reference_reconciliation": "PASS",
+  "references": {
+    "SalesRevenue": {
+      "actual": "19701685.50700000",
+      "reference": "19701685.507",
+      "tolerance": 0.001
+    },
+    "UnitsSold": {
+      "actual": "11221960",
+      "reference": "11221960",
+      "tolerance": 0
+    },
+    "Orders": {
+      "actual": "39519",
+      "reference": "39519",
+      "tolerance": 0
+    },
+    "SalesCustomers": {
+      "actual": "5852",
+      "reference": "5852",
+      "tolerance": 0
+    },
+    "CancellationValue": {
+      "actual": "719692.94000000",
+      "reference": "719692.94",
+      "tolerance": 0.001
+    },
+    "CancellationValueRate": {
+      "actual": "0.03524213323149723028097017079",
+      "reference": "0.035242",
+      "tolerance": 1e-06
+    },
+    "AnonymousSalesRevenue": {
+      "actual": "2576013.46000000",
+      "reference": "2576013.46",
+      "tolerance": 0.001
+    },
+    "OperationalAdjustmentRows": {
+      "actual": "3392",
+      "reference": "3392",
+      "tolerance": 0
+    },
+    "CanonicalTransactionRows": {
+      "actual": "1044848",
+      "reference": "1044848",
+      "tolerance": 0
+    }
+  },
+  "workbooks": {
+    "Online_Retail_Management_Analytics.xlsx": {
+      "sheets": 14,
+      "validated_cells": 82847,
+      "sheet_rows": {
+        "01_EXECUTIVE_SUMMARY": 16,
+        "02_MONTHLY_SALES": 25,
+        "03_MARKET_PERFORMANCE": 43,
+        "04_PRODUCT_PERFORMANCE": 100,
+        "05_CUSTOMER_PERFORMANCE": 5852,
+        "06_RFM_SEGMENTS": 9,
+        "07_COHORT_RETENTION": 325,
+        "08_CANCELLATIONS": 70,
+        "09_ADJUSTMENTS": 2,
+        "10_DATA_QUALITY": 14,
+        "11_TRANSACTION_CLASSES": 7,
+        "12_KPI_DICTIONARY": 31,
+        "13_MODEL_RELATIONSHIPS": 7,
+        "00_README": 31
+      }
+    },
+    "Online_Retail_Analytical_Detail.xlsx": {
+      "sheets": 16,
+      "validated_cells": 433816,
+      "sheet_rows": {
+        "CUSTOMER_360": 5852,
+        "CUSTOMER_RFM": 5852,
+        "CUSTOMER_COHORT": 5852,
+        "CUSTOMER_REPEAT_BEHAVIOR": 5852,
+        "COHORT_RETENTION": 325,
+        "COHORT_REVENUE": 325,
+        "PRODUCT_ANALYTICS": 5108,
+        "MARKET_ANALYTICS": 43,
+        "MONTHLY_SALES": 25,
+        "CANCELLATION_PRODUCTS": 5131,
+        "CANCELLATION_MARKETS": 43,
+        "MONTHLY_CANCELLATIONS": 25,
+        "ANONYMOUS_MARKETS": 14,
+        "DUPLICATE_EXPOSURE": 4,
+        "TRANSACTION_CLASS_DETAIL": 7,
+        "00_README": 33
+      }
+    }
+  },
+  "warnings": [
+    "Source-currency code is unspecified; amounts use SC formatting.",
+    "2009 and 2011 are partial periods; cohort observation-boundary flags are retained.",
+    "Distinct counts and rates are nonadditive; management product/cancellation lists are explicitly Top N."
+  ]
+}

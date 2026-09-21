@@ -1,0 +1,30 @@
+{
+  "default_item_class": "MERCHANDISE",
+  "exact_codes": {
+    "POST": "SHIPPING_SERVICE",
+    "DOT": "SHIPPING_SERVICE",
+    "C2": "SHIPPING_SERVICE",
+    "D": "DISCOUNT",
+    "M": "MANUAL",
+    "BANK CHARGES": "FINANCIAL_FEE",
+    "AMAZONFEE": "FINANCIAL_FEE",
+    "CRUK": "FINANCIAL_FEE",
+    "ADJUST": "ACCOUNTING_ADJUSTMENT",
+    "B": "ACCOUNTING_ADJUSTMENT",
+    "S": "SAMPLE",
+    "TEST001": "TEST",
+    "TEST002": "TEST",
+    "GIFT": "GIFT_VOUCHER"
+  },
+  "prefix_codes": {
+    "GIFT_0001_": "GIFT_VOUCHER"
+  },
+  "non_merchandise_transaction_item_classes": [
+    "SHIPPING_SERVICE",
+    "DISCOUNT",
+    "MANUAL",
+    "FINANCIAL_FEE",
+    "SAMPLE",
+    "GIFT_VOUCHER"
+  ]
+}

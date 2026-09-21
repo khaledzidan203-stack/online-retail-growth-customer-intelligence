@@ -1,0 +1,48 @@
+table 'analytics DimProduct'
+	lineageTag: afa8ef23-67af-4acc-9f78-a5b245b63853
+
+	column ProductKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e8597b65-8249-4f64-8ca7-bce99198453a
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockCode
+		dataType: string
+		lineageTag: e7aa911f-d6a8-4de5-bdf3-d892504076a0
+		summarizeBy: none
+		sourceColumn: StockCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column RepresentativeDescription
+		dataType: string
+		lineageTag: a72694ea-2e3b-41be-b660-3b57935bd8b1
+		summarizeBy: none
+		sourceColumn: RepresentativeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ItemClass
+		dataType: string
+		lineageTag: 572a7643-e4b7-48d2-a473-d2bfdc38332e
+		summarizeBy: none
+		sourceColumn: ItemClass
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics DimProduct' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_DimProduct = Source{[Schema="analytics",Item="DimProduct"]}[Data]
+				in
+				    analytics_DimProduct
+
+	annotation PBI_ResultType = Table
+

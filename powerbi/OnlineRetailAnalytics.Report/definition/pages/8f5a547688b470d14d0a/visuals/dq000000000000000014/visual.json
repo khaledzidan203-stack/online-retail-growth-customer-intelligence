@@ -1,0 +1,229 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+    "name":  "dq000000000000000014",
+    "position":  {
+                     "x":  60,
+                     "y":  970,
+                     "z":  14000,
+                     "height":  45,
+                     "width":  1800,
+                     "tabOrder":  14000
+                 },
+    "visual":  {
+                   "visualType":  "basicShape",
+                   "objects":  {
+                                   "fill":  [
+                                                {
+                                                    "properties":  {
+                                                                       "show":  {
+                                                                                    "expr":  {
+                                                                                                 "Literal":  {
+                                                                                                                 "Value":  "false"
+                                                                                                             }
+                                                                                             }
+                                                                                }
+                                                                   }
+                                                }
+                                            ],
+                                   "line":  [
+                                                {
+                                                    "properties":  {
+                                                                       "transparency":  {
+                                                                                            "expr":  {
+                                                                                                         "Literal":  {
+                                                                                                                         "Value":  "100D"
+                                                                                                                     }
+                                                                                                     }
+                                                                                        },
+                                                                       "lineColor":  {
+                                                                                         "solid":  {
+                                                                                                       "color":  {
+                                                                                                                     "expr":  {
+                                                                                                                                  "ThemeDataColor":  {
+                                                                                                                                                         "ColorId":  0,
+                                                                                                                                                         "Percent":  0
+                                                                                                                                                     }
+                                                                                                                              }
+                                                                                                                 }
+                                                                                                   }
+                                                                                     }
+                                                                   }
+                                                }
+                                            ],
+                                   "general":  [
+                                                   {
+                                                       "properties":  {
+                                                                          "shapeType":  {
+                                                                                            "expr":  {
+                                                                                                         "Literal":  {
+                                                                                                                         "Value":  "\u0027rectangleRounded\u0027"
+                                                                                                                     }
+                                                                                                     }
+                                                                                        }
+                                                                      }
+                                                   }
+                                               ]
+                               },
+                   "visualContainerObjects":  {
+                                                  "title":  [
+                                                                {
+                                                                    "properties":  {
+                                                                                       "show":  {
+                                                                                                    "expr":  {
+                                                                                                                 "Literal":  {
+                                                                                                                                 "Value":  "true"
+                                                                                                                             }
+                                                                                                             }
+                                                                                                },
+                                                                                       "text":  {
+                                                                                                    "expr":  {
+                                                                                                                 "Literal":  {
+                                                                                                                                 "Value":  "\u0027Quality indicators respond to Year/Country filters. Anonymous sales indicate missing customer identity, not invalid sales. Exception classes exclude MERCHANDISE_SALE.\u0027"
+                                                                                                                             }
+                                                                                                             }
+                                                                                                },
+                                                                                       "alignment":  {
+                                                                                                         "expr":  {
+                                                                                                                      "Literal":  {
+                                                                                                                                      "Value":  "\u0027left\u0027"
+                                                                                                                                  }
+                                                                                                                  }
+                                                                                                     },
+                                                                                       "fontSize":  {
+                                                                                                        "expr":  {
+                                                                                                                     "Literal":  {
+                                                                                                                                     "Value":  "10D"
+                                                                                                                                 }
+                                                                                                                 }
+                                                                                                    },
+                                                                                       "fontFamily":  {
+                                                                                                          "expr":  {
+                                                                                                                       "Literal":  {
+                                                                                                                                       "Value":  "\u0027Segoe UI\u0027"
+                                                                                                                                   }
+                                                                                                                   }
+                                                                                                      },
+                                                                                       "bold":  {
+                                                                                                    "expr":  {
+                                                                                                                 "Literal":  {
+                                                                                                                                 "Value":  "false"
+                                                                                                                             }
+                                                                                                             }
+                                                                                                },
+                                                                                       "fontColor":  {
+                                                                                                         "solid":  {
+                                                                                                                       "color":  {
+                                                                                                                                     "expr":  {
+                                                                                                                                                  "Literal":  {
+                                                                                                                                                                  "Value":  "\u0027#94A3B8\u0027"
+                                                                                                                                                              }
+                                                                                                                                              }
+                                                                                                                                 }
+                                                                                                                   }
+                                                                                                     }
+                                                                                   }
+                                                                }
+                                                            ],
+                                                  "subTitle":  [
+                                                                   {
+                                                                       "properties":  {
+                                                                                          "show":  {
+                                                                                                       "expr":  {
+                                                                                                                    "Literal":  {
+                                                                                                                                    "Value":  "false"
+                                                                                                                                }
+                                                                                                                }
+                                                                                                   },
+                                                                                          "text":  {
+                                                                                                       "expr":  {
+                                                                                                                    "Literal":  {
+                                                                                                                                    "Value":  "\u0027Customer Value \u0026 Behavioral Segmentation\u0027"
+                                                                                                                                }
+                                                                                                                }
+                                                                                                   },
+                                                                                          "alignment":  {
+                                                                                                            "expr":  {
+                                                                                                                         "Literal":  {
+                                                                                                                                         "Value":  "\u0027center\u0027"
+                                                                                                                                     }
+                                                                                                                     }
+                                                                                                        },
+                                                                                          "fontSize":  {
+                                                                                                           "expr":  {
+                                                                                                                        "Literal":  {
+                                                                                                                                        "Value":  "11D"
+                                                                                                                                    }
+                                                                                                                    }
+                                                                                                       },
+                                                                                          "fontFamily":  {
+                                                                                                             "expr":  {
+                                                                                                                          "Literal":  {
+                                                                                                                                          "Value":  "\u0027Segoe UI\u0027"
+                                                                                                                                      }
+                                                                                                                      }
+                                                                                                         },
+                                                                                          "fontColor":  {
+                                                                                                            "solid":  {
+                                                                                                                          "color":  {
+                                                                                                                                        "expr":  {
+                                                                                                                                                     "Literal":  {
+                                                                                                                                                                     "Value":  "\u0027#94A3B8\u0027"
+                                                                                                                                                                 }
+                                                                                                                                                 }
+                                                                                                                                    }
+                                                                                                                      }
+                                                                                                        }
+                                                                                      }
+                                                                   }
+                                                               ],
+                                                  "background":  [
+                                                                     {
+                                                                         "properties":  {
+                                                                                            "show":  {
+                                                                                                         "expr":  {
+                                                                                                                      "Literal":  {
+                                                                                                                                      "Value":  "false"
+                                                                                                                                  }
+                                                                                                                  }
+                                                                                                     },
+                                                                                            "transparency":  {
+                                                                                                                 "expr":  {
+                                                                                                                              "Literal":  {
+                                                                                                                                              "Value":  "100D"
+                                                                                                                                          }
+                                                                                                                          }
+                                                                                                             }
+                                                                                        }
+                                                                     }
+                                                                 ],
+                                                  "visualHeader":  [
+                                                                       {
+                                                                           "properties":  {
+                                                                                              "show":  {
+                                                                                                           "expr":  {
+                                                                                                                        "Literal":  {
+                                                                                                                                        "Value":  "false"
+                                                                                                                                    }
+                                                                                                                    }
+                                                                                                       }
+                                                                                          }
+                                                                       }
+                                                                   ],
+                                                  "border":  [
+                                                                 {
+                                                                     "properties":  {
+                                                                                        "show":  {
+                                                                                                     "expr":  {
+                                                                                                                  "Literal":  {
+                                                                                                                                  "Value":  "false"
+                                                                                                                              }
+                                                                                                              }
+                                                                                                 }
+                                                                                    }
+                                                                 }
+                                                             ]
+                                              },
+                   "drillFilterOtherVisuals":  true
+               },
+    "howCreated":  "DraggedToCanvas"
+}

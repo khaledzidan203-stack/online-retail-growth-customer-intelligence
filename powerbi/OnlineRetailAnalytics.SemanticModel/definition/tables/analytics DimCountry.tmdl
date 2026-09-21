@@ -1,0 +1,32 @@
+table 'analytics DimCountry'
+	lineageTag: e2f7f31b-c90b-4a9d-9ba6-c761c2421877
+
+	column CountryKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8c8c7153-502c-45b0-a77a-43a6b810fb31
+		summarizeBy: none
+		sourceColumn: CountryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: b06ff8ee-4d10-4b24-850a-8ec4e3c34342
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics DimCountry' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_DimCountry = Source{[Schema="analytics",Item="DimCountry"]}[Data]
+				in
+				    analytics_DimCountry
+
+	annotation PBI_ResultType = Table
+

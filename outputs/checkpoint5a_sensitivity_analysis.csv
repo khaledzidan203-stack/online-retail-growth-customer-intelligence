@@ -1,0 +1,7 @@
+sensitivity,metric,official_value,comparison_value,absolute_difference,percent_impact
+Duplicate-after-first exclusion,Revenue,19701685.507,19644592.687,-57092.8200000003,-0.0028978647527245953
+Duplicate-after-first exclusion,Units,11221960.0,11188064.0,-33896.0,-0.0030205062217295376
+Duplicate-after-first exclusion,Orders,39519.0,39519.0,0.0,0.0
+Duplicate-after-first exclusion,AOV,498.53704564892837,497.09235271641484,-1.444692932513533,-0.0028978647527246972
+Duplicate-after-first exclusion,CancellationValue,719692.94,716462.57,-3230.3699999999953,-0.004488539237303058
+StockCode 23843 / Customer 16446 exclusion,CancellationValue,719692.9400000001,551223.3400000001,-168469.6,-0.23408538647051338

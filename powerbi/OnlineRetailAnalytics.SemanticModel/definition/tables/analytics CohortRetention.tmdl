@@ -1,0 +1,97 @@
+table 'analytics CohortRetention'
+	lineageTag: 7f64141b-4195-4a7a-a55d-d44967751b2d
+
+	column AcquisitionCohort
+		dataType: string
+		lineageTag: 4744e650-06a2-46eb-b253-3a4effb53b0d
+		summarizeBy: none
+		sourceColumn: AcquisitionCohort
+
+		annotation SummarizationSetBy = Automatic
+
+	column CohortIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e7491be-0715-46c5-9407-5dae5259b58a
+		summarizeBy: none
+		sourceColumn: CohortIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActivityMonth
+		dataType: string
+		lineageTag: 3288a1cc-4856-4975-b1e6-75af04617d4b
+		summarizeBy: none
+		sourceColumn: ActivityMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column CohortSize
+		dataType: int64
+		formatString: 0
+		lineageTag: 44cf5ddb-0f9a-46d9-a8f8-262107229699
+		summarizeBy: none
+		sourceColumn: CohortSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveCustomers
+		dataType: int64
+		formatString: 0
+		lineageTag: cc6111ba-96cf-4e9e-b58e-1c701bd55b7b
+		summarizeBy: none
+		sourceColumn: ActiveCustomers
+
+		annotation SummarizationSetBy = Automatic
+
+	column RetentionRate
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 26297026-17e4-4e62-bfac-92dc8d60181e
+		summarizeBy: none
+		sourceColumn: RetentionRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsLeftBoundaryCohort
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: af98ce6a-d0da-440d-a4d9-047e3f32dbc5
+		summarizeBy: none
+		sourceColumn: IsLeftBoundaryCohort
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPartialObservation
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 844c400b-e508-4e35-b496-08b4a3970520
+		summarizeBy: none
+		sourceColumn: IsPartialObservation
+
+		annotation SummarizationSetBy = Automatic
+
+	column ObservationStatus
+		dataType: string
+		isHidden
+		lineageTag: 1636f23c-5e48-4a46-b5c6-c16e083a1b0b
+		summarizeBy: none
+		sourceColumn: ObservationStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics CohortRetention' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_CohortRetention = Source{[Schema="analytics",Item="CohortRetention"]}[Data]
+				in
+				    analytics_CohortRetention
+
+	annotation PBI_ResultType = Table
+

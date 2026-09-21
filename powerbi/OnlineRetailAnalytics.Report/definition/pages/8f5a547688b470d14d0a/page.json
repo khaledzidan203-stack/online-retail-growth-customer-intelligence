@@ -1,0 +1,58 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+    "name":  "8f5a547688b470d14d0a",
+    "displayName":  "Data Quality",
+    "displayOption":  "FitToPage",
+    "height":  1080,
+    "width":  1920,
+    "objects":  {
+                    "background":  [
+                                       {
+                                           "properties":  {
+                                                              "color":  {
+                                                                            "solid":  {
+                                                                                          "color":  {
+                                                                                                        "expr":  {
+                                                                                                                     "Literal":  {
+                                                                                                                                     "Value":  "\u0027#0B1220\u0027"
+                                                                                                                                 }
+                                                                                                                 }
+                                                                                                    }
+                                                                                      }
+                                                                        },
+                                                              "transparency":  {
+                                                                                   "expr":  {
+                                                                                                "Literal":  {
+                                                                                                                "Value":  "0D"
+                                                                                                            }
+                                                                                            }
+                                                                               }
+                                                          }
+                                       }
+                                   ],
+                    "outspace":  [
+                                     {
+                                         "properties":  {
+                                                            "color":  {
+                                                                          "solid":  {
+                                                                                        "color":  {
+                                                                                                      "expr":  {
+                                                                                                                   "Literal":  {
+                                                                                                                                   "Value":  "\u0027#0B1220\u0027"
+                                                                                                                               }
+                                                                                                               }
+                                                                                                  }
+                                                                                    }
+                                                                      },
+                                                            "transparency":  {
+                                                                                 "expr":  {
+                                                                                              "Literal":  {
+                                                                                                              "Value":  "0D"
+                                                                                                          }
+                                                                                          }
+                                                                             }
+                                                        }
+                                     }
+                                 ]
+                }
+}

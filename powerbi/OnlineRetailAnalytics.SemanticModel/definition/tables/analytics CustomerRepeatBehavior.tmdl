@@ -1,0 +1,69 @@
+table 'analytics CustomerRepeatBehavior'
+	lineageTag: 5c2c558f-507b-4518-aa93-7ae07e76ad5f
+
+	column CustomerKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 951ef06c-225e-4cd2-b617-abf765c6ac20
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: da8a7ef3-c17c-43fd-bce9-d4b7209acd9e
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstPurchaseDate
+		dataType: dateTime
+		formatString: yyyy-MM-dd HH:mm
+		lineageTag: 0efba938-bafb-44db-940b-82fa67ff553a
+		summarizeBy: none
+		sourceColumn: FirstPurchaseDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column SecondPurchaseDate
+		dataType: dateTime
+		formatString: yyyy-MM-dd HH:mm
+		lineageTag: db49e89a-cb27-4e91-ade4-2240aa558126
+		summarizeBy: none
+		sourceColumn: SecondPurchaseDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaysToSecondPurchase
+		dataType: int64
+		formatString: 0
+		lineageTag: 49606c99-6fe2-49d7-8d3a-830ff3da7856
+		summarizeBy: none
+		sourceColumn: DaysToSecondPurchase
+
+		annotation SummarizationSetBy = Automatic
+
+	column HasRepeatPurchase
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 26a5acda-a2a7-44fb-9d38-1f362ffa6b62
+		summarizeBy: none
+		sourceColumn: HasRepeatPurchase
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics CustomerRepeatBehavior' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_CustomerRepeatBehavior = Source{[Schema="analytics",Item="CustomerRepeatBehavior"]}[Data]
+				in
+				    analytics_CustomerRepeatBehavior
+
+	annotation PBI_ResultType = Table
+

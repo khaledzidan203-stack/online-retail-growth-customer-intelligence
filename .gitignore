@@ -1,0 +1,59 @@
+# Python
+# Publication safety exclusions
+.ipynb_checkpoints/
+.env.*
+*.key
+*.pem
+*.mdf
+*.ldf
+*.bak
+online_retail_II.xlsx
+CHECKPOINT_*
+BACKUP_*
+BROKEN_*
+PROJECT_SNAPSHOT_*
+# Retain historical validation Markdown documents despite broad backup exclusions.
+!docs/validation/CHECKPOINT_*.md
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local data (retain directory placeholders only)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Generated local artifacts
+*.log
+~$*.xlsx
+
+# Local Power BI state and recovery artifacts
+.pbi/
+*.abf
+CHECKPOINT_*/
+**/CHECKPOINT_*/
+BACKUP_*/
+*.BACKUP*
+BROKEN_*/
+PROJECT_SNAPSHOT_*/
+powerbi/CHECKPOINT_*/
+
+# Temporary discovery and QA transcripts
+FINAL_PAGES_DISCOVERY/
+*DISCOVERY*.txt
+*DISCOVERY*.sql
+*PROFILE*.txt
+*PROFILE*.sql
+FINAL_REPORT_QA.txt
+FINAL_PAGES_PROFILE.*

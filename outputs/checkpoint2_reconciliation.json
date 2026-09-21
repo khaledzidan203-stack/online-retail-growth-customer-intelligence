@@ -1,0 +1,155 @@
+{
+  "generated_at_utc": "2026-09-19T18:04:47.652374+00:00",
+  "source": {
+    "path": "data/raw/online_retail_II.xlsx",
+    "sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+    "canonical_structural_rule": {
+      "Year 2009-2010": "InvoiceDate < 2010-12-01",
+      "Year 2010-2011": "all rows"
+    }
+  },
+  "canonical_output": {
+    "path": "data/interim/canonical_transactions.parquet",
+    "rows": 1044848,
+    "columns": 30,
+    "size_bytes": 17930707
+  },
+  "transaction_class_counts": [
+    {
+      "transaction_class": "ACCOUNTING_ADJUSTMENT",
+      "row_count": 73
+    },
+    {
+      "transaction_class": "CUSTOMER_CANCELLATION",
+      "row_count": 17974
+    },
+    {
+      "transaction_class": "MERCHANDISE_SALE",
+      "row_count": 1015091
+    },
+    {
+      "transaction_class": "NON_MERCHANDISE",
+      "row_count": 5719
+    },
+    {
+      "transaction_class": "OPERATIONAL_STOCK_ADJUSTMENT",
+      "row_count": 3392
+    },
+    {
+      "transaction_class": "TEST_RECORD",
+      "row_count": 17
+    },
+    {
+      "transaction_class": "ZERO_PRICE_MERCHANDISE",
+      "row_count": 2582
+    }
+  ],
+  "item_class_counts": [
+    {
+      "item_class": "ACCOUNTING_ADJUSTMENT",
+      "row_count": 73
+    },
+    {
+      "item_class": "DISCOUNT",
+      "row_count": 173
+    },
+    {
+      "item_class": "FINANCIAL_FEE",
+      "row_count": 152
+    },
+    {
+      "item_class": "GIFT_VOUCHER",
+      "row_count": 101
+    },
+    {
+      "item_class": "MANUAL",
+      "row_count": 1403
+    },
+    {
+      "item_class": "MERCHANDISE",
+      "row_count": 1039039
+    },
+    {
+      "item_class": "SAMPLE",
+      "row_count": 102
+    },
+    {
+      "item_class": "SHIPPING_SERVICE",
+      "row_count": 3788
+    },
+    {
+      "item_class": "TEST",
+      "row_count": 17
+    }
+  ],
+  "eligibility": {
+    "sales_eligible_rows": 1015091,
+    "sales_eligible_line_amount": 19701685.507,
+    "customer_analytics_eligible_rows": 788209,
+    "cancellation_eligible_rows": 17974,
+    "cancellation_eligible_absolute_line_amount": 719692.94
+  },
+  "operational_adjustments": {
+    "rows": 3392,
+    "line_amount": 0.0
+  },
+  "customers": {
+    "known_rows": 809561,
+    "unknown_rows": 235287
+  },
+  "data_quality": {
+    "missing_customer_rows": 235287,
+    "zero_price_rows": 6024,
+    "negative_price_rows": 5,
+    "dq_review_rows": 0,
+    "dq_review_examples": []
+  },
+  "duplicate_impact_by_transaction_class": [
+    {
+      "transaction_class": "CUSTOMER_CANCELLATION",
+      "duplicate_rows": 59,
+      "duplicate_quantity": -2142,
+      "duplicate_line_amount": -3230.3700000000003
+    },
+    {
+      "transaction_class": "MERCHANDISE_SALE",
+      "duplicate_rows": 11731,
+      "duplicate_quantity": 33896,
+      "duplicate_line_amount": 57092.82
+    },
+    {
+      "transaction_class": "NON_MERCHANDISE",
+      "duplicate_rows": 12,
+      "duplicate_quantity": 300,
+      "duplicate_line_amount": 365.97
+    },
+    {
+      "transaction_class": "ZERO_PRICE_MERCHANDISE",
+      "duplicate_rows": 10,
+      "duplicate_quantity": 11,
+      "duplicate_line_amount": 0.0
+    }
+  ],
+  "duplicate_impact": {
+    "extra_rows_beyond_first": 11812,
+    "rows_participating_in_groups": 22813,
+    "merchandise_sales_revenue_including_duplicates": 19701685.507,
+    "merchandise_sales_revenue_excluding_duplicates_after_first": 19644592.687000003,
+    "merchandise_sales_revenue_effect": 57092.81999999657,
+    "eligible_order_count_including_duplicates": 39519,
+    "eligible_order_count_excluding_duplicates_after_first": 39519,
+    "eligible_order_count_effect": 0,
+    "duplicate_groups": 11001
+  },
+  "reconciliation": {
+    "canonical_rows_expected": true,
+    "transaction_classes_sum_to_canonical": true,
+    "item_classes_sum_to_canonical": true,
+    "known_plus_unknown_equals_canonical": true,
+    "duplicate_flagged_plus_nonduplicate_equals_canonical": true,
+    "duplicate_extra_rows_match_baseline": true,
+    "duplicate_participating_rows_match_baseline": true,
+    "duplicate_groups_match_baseline": true
+  },
+  "overall_status": "PASS"
+}

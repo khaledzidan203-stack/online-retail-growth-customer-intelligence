@@ -1,0 +1,32 @@
+table 'analytics DimCustomer'
+	lineageTag: dbbc42aa-f36f-4f39-a318-dc50c14cc4a0
+
+	column CustomerKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04e87316-e3a4-4cc1-94b4-647ae96c0ad2
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		lineageTag: 2168229a-9a8f-484b-b8ac-3e14db3eeb64
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics DimCustomer' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_DimCustomer = Source{[Schema="analytics",Item="DimCustomer"]}[Data]
+				in
+				    analytics_DimCustomer
+
+	annotation PBI_ResultType = Table
+

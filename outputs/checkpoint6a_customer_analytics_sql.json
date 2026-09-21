@@ -1,0 +1,250 @@
+{
+  "generated_at_utc": "2026-09-19T20:07:10.571394+00:00",
+  "connection": {
+    "server_argument": "localhost",
+    "server_name": "khalez_zidan",
+    "product_version": "17.0.1000.7",
+    "windows_login": "khalez_zidan\\khale",
+    "database": "OnlineRetailAnalytics",
+    "authentication": "Windows Authentication"
+  },
+  "publication_method": "Validated Python outputs loaded without SQL model recalculation.",
+  "sources": {
+    "rfm": {
+      "path": "outputs/rfm_customer_segments.csv",
+      "sha256": "0f193f4168c21dcf31adce7e282d16a29c7fd00115d1777a923b4cf974d4896f"
+    },
+    "rfm_boundaries": {
+      "path": "outputs/rfm_score_boundaries.json",
+      "sha256": "b7dd5727d330466a31b1b6d7652ba1eea3ee5d74adf3c3e26c5b34ae0cc54638"
+    },
+    "cohort_retention": {
+      "path": "outputs/cohort_customer_retention.csv",
+      "sha256": "47137d3c60ae9aea8398425501317f6494a2389d483064ef0b76da6fa317bb58"
+    },
+    "cohort_revenue": {
+      "path": "outputs/cohort_revenue.csv",
+      "sha256": "e63c9358e1aae4a8f717f23ad0a2d8dde2001319fbe7e6cddb536ef0e1a07490"
+    },
+    "repeat": {
+      "path": "outputs/customer_repeat_timing.csv",
+      "sha256": "fea4623f0c849bfac3a82711a682d383e5fe4f7618ab38053f6f7c0b58d58f33"
+    }
+  },
+  "dim_customer_rows": 5942,
+  "published_customer_rows": 5852,
+  "validations": [
+    {
+      "metric": "Broken CustomerCohort customer keys",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Broken CustomerRepeatBehavior customer keys",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Broken CustomerRFM customer keys",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Cohort size total",
+      "actual": "5852.00000000",
+      "expected": "5852.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "CohortRetention rows",
+      "actual": "325.00000000",
+      "expected": "325.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "CohortRevenue rows",
+      "actual": "325.00000000",
+      "expected": "325.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Customer table set mismatches",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Customer360 duplicate keys or IDs",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Customer360 rows",
+      "actual": "5852.00000000",
+      "expected": "5852.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "CustomerCohort rows",
+      "actual": "5852.00000000",
+      "expected": "5852.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "CustomerRepeatBehavior rows",
+      "actual": "5852.00000000",
+      "expected": "5852.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "CustomerRFM rows",
+      "actual": "5852.00000000",
+      "expected": "5852.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Duplicate CustomerCohort keys or IDs",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Duplicate CustomerRepeatBehavior keys or IDs",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Duplicate CustomerRFM keys or IDs",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Duplicate or anonymous customer leakage",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Incorrect left-boundary cohort flags",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Incorrect RFM reference dates",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Month 0 invalid retention rows",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Non-repeat customers",
+      "actual": "1618.00000000",
+      "expected": "1618.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Repeat customers",
+      "actual": "4234.00000000",
+      "expected": "4234.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Retention/revenue grain mismatches",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "RFM frequency total",
+      "actual": "36597.00000000",
+      "expected": "36597.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "RFM monetary total",
+      "actual": "17125672.04700000",
+      "expected": "17125672.04700000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment customer total",
+      "actual": "5852.00000000",
+      "expected": "5852.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment: At Risk",
+      "actual": "709.00000000",
+      "expected": "709.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment: Champions",
+      "actual": "1261.00000000",
+      "expected": "1261.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment: Hibernating",
+      "actual": "681.00000000",
+      "expected": "681.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment: Lost",
+      "actual": "949.00000000",
+      "expected": "949.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment: Loyal Customers",
+      "actual": "594.00000000",
+      "expected": "594.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment: Need Attention",
+      "actual": "409.00000000",
+      "expected": "409.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment: New Customers",
+      "actual": "78.00000000",
+      "expected": "78.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment: Potential Loyalists",
+      "actual": "716.00000000",
+      "expected": "716.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Segment: Promising",
+      "actual": "455.00000000",
+      "expected": "455.00000000",
+      "status": "PASS"
+    },
+    {
+      "metric": "Unclassified RFM customers",
+      "actual": "0.00000000",
+      "expected": "0.00000000",
+      "status": "PASS"
+    }
+  ],
+  "failed_metrics": [],
+  "overall_status": "PASS"
+}

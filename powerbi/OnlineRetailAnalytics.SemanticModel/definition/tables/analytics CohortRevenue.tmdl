@@ -1,0 +1,119 @@
+table 'analytics CohortRevenue'
+	lineageTag: b010a406-35b8-4d24-b7b0-295c89d6a6ec
+
+	column AcquisitionCohort
+		dataType: string
+		lineageTag: 72bd9587-8392-4a78-a8e5-6209fadf28be
+		summarizeBy: none
+		sourceColumn: AcquisitionCohort
+
+		annotation SummarizationSetBy = Automatic
+
+	column CohortIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 54c44385-8bd2-4196-9cf5-f2cccf573068
+		summarizeBy: none
+		sourceColumn: CohortIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActivityMonth
+		dataType: string
+		lineageTag: 7c291698-b5ce-4f42-9458-621e4a974741
+		summarizeBy: none
+		sourceColumn: ActivityMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column CohortSize
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ed549a3-2be7-4493-97f9-76ef731993bc
+		summarizeBy: none
+		sourceColumn: CohortSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 964ccd3e-4a49-480d-8473-577810002fa5
+		summarizeBy: sum
+		sourceColumn: Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RevenuePerOriginalCustomer
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: e85de4aa-bc34-4fb1-85b3-298c872f50f7
+		summarizeBy: none
+		sourceColumn: RevenuePerOriginalCustomer
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Orders
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 672f8a75-617c-4191-8c3d-86d35da40bda
+		summarizeBy: sum
+		sourceColumn: Orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrdersPerOriginalCustomer
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 8e112467-78d7-44d4-a6a4-abcfedf0d5ab
+		summarizeBy: none
+		sourceColumn: OrdersPerOriginalCustomer
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsLeftBoundaryCohort
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9d7911cd-af99-479f-bfb8-e022c1289f5c
+		summarizeBy: none
+		sourceColumn: IsLeftBoundaryCohort
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPartialObservation
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8f8aec60-a581-497c-be69-22c300af679a
+		summarizeBy: none
+		sourceColumn: IsPartialObservation
+
+		annotation SummarizationSetBy = Automatic
+
+	column ObservationStatus
+		dataType: string
+		isHidden
+		lineageTag: 1d5197b0-d971-492e-8122-2d8540d71468
+		summarizeBy: none
+		sourceColumn: ObservationStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics CohortRevenue' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "OnlineRetailAnalytics"),
+				    analytics_CohortRevenue = Source{[Schema="analytics",Item="CohortRevenue"]}[Data]
+				in
+				    analytics_CohortRevenue
+
+	annotation PBI_ResultType = Table
+

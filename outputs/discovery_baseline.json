@@ -1,0 +1,255 @@
+{
+  "generated_at_utc": "2026-09-19T17:57:49.851106+00:00",
+  "source": {
+    "path": "data/raw/online_retail_II.xlsx",
+    "filename": "online_retail_II.xlsx",
+    "size_bytes": 45622278,
+    "sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+    "sheet_names": [
+      "Year 2009-2010",
+      "Year 2010-2011"
+    ]
+  },
+  "canonical_rule": {
+    "Year 2009-2010": "InvoiceDate < 2010-12-01",
+    "Year 2010-2011": "all rows",
+    "other_duplicate_removal": false
+  },
+  "metrics": {
+    "sheet_2009_2010_rows": 525461,
+    "sheet_2010_2011_rows": 541910,
+    "raw_total_rows": 1067371,
+    "structural_overlap_rows": 22523,
+    "exact_cross_sheet_overlap_rows": 22523,
+    "overlap_distinct_invoices": 1088,
+    "canonical_rows": 1044848,
+    "date_min": "2009-12-01T07:45:00",
+    "date_max": "2011-12-09T12:50:00",
+    "distinct_invoices": 53628,
+    "distinct_stock_codes": 5305,
+    "trimmed_distinct_stock_codes": 5304,
+    "distinct_descriptions": 5698,
+    "trimmed_distinct_descriptions": 5655,
+    "distinct_customer_ids": 5942,
+    "countries": 43,
+    "missing_customer_id": 235287,
+    "missing_description": 4275,
+    "positive_quantity_rows": 1022291,
+    "negative_quantity_rows": 22557,
+    "zero_quantity_rows": 0,
+    "c_prefixed_invoice_rows": 19165,
+    "distinct_c_invoices": 8292,
+    "negative_quantity_without_c_rows": 3393,
+    "positive_price_rows": 1038819,
+    "zero_price_rows": 6024,
+    "negative_price_rows": 5,
+    "exact_repeated_row_occurrences": 11812,
+    "rows_in_exact_duplicate_groups": 22813,
+    "exact_duplicate_groups": 11001
+  },
+  "validations": {
+    "sheet_2009_2010_rows": {
+      "actual": 525461,
+      "expected": 525461,
+      "status": "PASS"
+    },
+    "sheet_2010_2011_rows": {
+      "actual": 541910,
+      "expected": 541910,
+      "status": "PASS"
+    },
+    "raw_total_rows": {
+      "actual": 1067371,
+      "expected": 1067371,
+      "status": "PASS"
+    },
+    "structural_overlap_rows": {
+      "actual": 22523,
+      "expected": 22523,
+      "status": "PASS"
+    },
+    "overlap_distinct_invoices": {
+      "actual": 1088,
+      "expected": 1088,
+      "status": "PASS"
+    },
+    "canonical_rows": {
+      "actual": 1044848,
+      "expected": 1044848,
+      "status": "PASS"
+    },
+    "date_min": {
+      "actual": "2009-12-01T07:45:00",
+      "expected": "2009-12-01T07:45:00",
+      "status": "PASS"
+    },
+    "date_max": {
+      "actual": "2011-12-09T12:50:00",
+      "expected": "2011-12-09T12:50:00",
+      "status": "PASS"
+    },
+    "distinct_invoices": {
+      "actual": 53628,
+      "expected": 53628,
+      "status": "PASS"
+    },
+    "distinct_stock_codes": {
+      "actual": 5305,
+      "expected": 5305,
+      "status": "PASS"
+    },
+    "trimmed_distinct_stock_codes": {
+      "actual": 5304,
+      "expected": 5304,
+      "status": "PASS"
+    },
+    "distinct_descriptions": {
+      "actual": 5698,
+      "expected": 5698,
+      "status": "PASS"
+    },
+    "trimmed_distinct_descriptions": {
+      "actual": 5655,
+      "expected": 5655,
+      "status": "PASS"
+    },
+    "distinct_customer_ids": {
+      "actual": 5942,
+      "expected": 5942,
+      "status": "PASS"
+    },
+    "countries": {
+      "actual": 43,
+      "expected": 43,
+      "status": "PASS"
+    },
+    "missing_customer_id": {
+      "actual": 235287,
+      "expected": 235287,
+      "status": "PASS"
+    },
+    "missing_description": {
+      "actual": 4275,
+      "expected": 4275,
+      "status": "PASS"
+    },
+    "positive_quantity_rows": {
+      "actual": 1022291,
+      "expected": 1022291,
+      "status": "PASS"
+    },
+    "negative_quantity_rows": {
+      "actual": 22557,
+      "expected": 22557,
+      "status": "PASS"
+    },
+    "zero_quantity_rows": {
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    "c_prefixed_invoice_rows": {
+      "actual": 19165,
+      "expected": 19165,
+      "status": "PASS"
+    },
+    "distinct_c_invoices": {
+      "actual": 8292,
+      "expected": 8292,
+      "status": "PASS"
+    },
+    "negative_quantity_without_c_rows": {
+      "actual": 3393,
+      "expected": 3393,
+      "status": "PASS"
+    },
+    "positive_price_rows": {
+      "actual": 1038819,
+      "expected": 1038819,
+      "status": "PASS"
+    },
+    "zero_price_rows": {
+      "actual": 6024,
+      "expected": 6024,
+      "status": "PASS"
+    },
+    "negative_price_rows": {
+      "actual": 5,
+      "expected": 5,
+      "status": "PASS"
+    },
+    "exact_repeated_row_occurrences": {
+      "actual": 11812,
+      "expected": 11812,
+      "status": "PASS"
+    },
+    "rows_in_exact_duplicate_groups": {
+      "actual": 22813,
+      "expected": 22813,
+      "status": "PASS"
+    },
+    "exact_duplicate_groups": {
+      "actual": 11001,
+      "expected": 11001,
+      "status": "PASS"
+    },
+    "exact_cross_sheet_overlap_rows": {
+      "actual": 22523,
+      "expected": 22523,
+      "status": "PASS"
+    },
+    "columns": {
+      "actual": {
+        "Year 2009-2010": {
+          "actual": [
+            "Invoice",
+            "StockCode",
+            "Description",
+            "Quantity",
+            "InvoiceDate",
+            "Price",
+            "Customer ID",
+            "Country"
+          ],
+          "expected": [
+            "Invoice",
+            "StockCode",
+            "Description",
+            "Quantity",
+            "InvoiceDate",
+            "Price",
+            "Customer ID",
+            "Country"
+          ],
+          "status": "PASS"
+        },
+        "Year 2010-2011": {
+          "actual": [
+            "Invoice",
+            "StockCode",
+            "Description",
+            "Quantity",
+            "InvoiceDate",
+            "Price",
+            "Customer ID",
+            "Country"
+          ],
+          "expected": [
+            "Invoice",
+            "StockCode",
+            "Description",
+            "Quantity",
+            "InvoiceDate",
+            "Price",
+            "Customer ID",
+            "Country"
+          ],
+          "status": "PASS"
+        }
+      },
+      "expected": "Exact expected columns on both sheets",
+      "status": "PASS"
+    }
+  },
+  "overall_status": "PASS"
+}
