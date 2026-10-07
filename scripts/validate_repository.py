@@ -40,6 +40,8 @@ PROTECTED_CORE = {
 REQUIRED = [
     "README.md",
     "PROJECT_NOTES.md",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
     "docs/README.md",
     "docs/PROJECT_INDEX.md",
     "docs/CASE_STUDY.md",
