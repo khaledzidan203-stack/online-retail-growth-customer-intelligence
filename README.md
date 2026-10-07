@@ -192,33 +192,11 @@ See [Power BI source guide](powerbi/README.md) and [report guide](docs/powerbi_r
 
 ## Authentic report evidence
 
-The repository retains ten genuine report captures.
+The **Executive Overview** shown near the top of this README is the only embedded report capture here, keeping the repository landing page focused and fast to scan.
 
-### Sales Performance
+The repository still retains **10 genuine Power BI report captures** covering the full report experience, including INDEX, Sales Performance, Customer Intelligence, RFM Segmentation, Cohort & Retention, Product Performance, Market Analysis, Cancellations & Adjustments, and Data Quality.
 
-![Sales Performance](screenshots/03_sales_performance.png)
-
-### Customer Intelligence
-
-![Customer Intelligence](screenshots/04_customer_intelligence.png)
-
-### RFM Segmentation
-
-![RFM Segmentation](screenshots/05_rfm_segmentation.png)
-
-### Cohort & Retention
-
-![Cohort & Retention](screenshots/06_cohort_retention.png)
-
-### Market Analysis
-
-![Market Analysis](screenshots/08_market_analysis.png)
-
-### Data Quality
-
-![Data Quality](screenshots/10_data_quality.png)
-
-[View all report captures](screenshots/README.md).
+[View the complete report-capture set](screenshots/README.md).
 
 ## Management Excel deliverables
 
