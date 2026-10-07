@@ -1,4 +1,4 @@
-# Real Power BI screenshots
+# Authentic Power BI report screenshots
 
 All ten images are genuine screenshots supplied with the completed project. They are included unchanged; no images were generated or reconstructed.
 
@@ -15,4 +15,4 @@ All ten images are genuine screenshots supplied with the completed project. They
 | Cancellations & Adjustments | [09_cancellations_adjustments.png](09_cancellations_adjustments.png) |
 | Data Quality | [10_data_quality.png](10_data_quality.png) |
 
-Captures show saved filter states. Refer to the [README baseline](../README.md#project-highlights) for full-dataset validated KPIs.
+Captures show saved filter states. Refer to the [README baseline](../README.md#project-at-a-glance) for full-dataset validated KPIs.
