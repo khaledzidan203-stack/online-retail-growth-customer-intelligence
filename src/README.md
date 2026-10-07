@@ -1,4 +1,4 @@
-# Python portfolio
+# Python analytical pipeline
 
 Python supports the full pipeline: source profiling, governed canonical processing, SQL loading, exploratory analysis, RFM/cohort processing, reconciliation and management Excel generation.
 
