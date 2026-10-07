@@ -1,4 +1,4 @@
-# SQL portfolio
+# SQL analytics layer
 
 The SQL Server database is `OnlineRetailAnalytics`. Its layers preserve canonical transaction lineage, apply governed staging types and expose a dimensional analytical model.
 
