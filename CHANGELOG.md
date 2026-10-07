@@ -1,11 +1,13 @@
 # Changelog
 
-## Portfolio publication
+## Repository hardening
 
-- Published the completed analytical project with a recruiter-first README, architecture and data-model diagrams, source guides and reproducible run steps.
-- Included all ten real Power BI screenshots and both validated management workbooks.
-- Preserved SQL, Python, PBIP, PBIR, TMDL, DAX and Excel analytical values; used an isolated sanitized initial commit with a GitHub noreply identity.
-- Consolidated planning/audit documents under docs/project/ in the publication copy. Earlier entries below retain historical checkpoint status.
+- Rebuilt the public README around the implemented retail analytics system and evidence boundaries.
+- Added Project Index, Case Study, Technical Walkthrough, Evidence Map, Environment Baseline and Final Release Validation documentation.
+- Added fresh GitHub CI for protected-core hashes, retained management evidence, PBIR/TMDL structure, workbook packages, screenshots and publication safety.
+- Preserved the validated SQL, Python, PBIP, PBIR, TMDL, DAX, Excel and screenshot analytical core unchanged.
+- Replaced recruitment-oriented packaging documentation with neutral project notes and project inventory.
+- Clarified historical/retained SQL and Power BI evidence versus fresh GitHub CI.
 
 ## Unreleased
 
